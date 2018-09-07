@@ -72,6 +72,7 @@ public class ElementDeclaration {
 	// Select groups post
 	public static String GLOBAL_IMAGE_POST = "com.anomo.bellevue.staging:id/iv_feed";
 	public static String SELECT_GROUP_TEXT_VIEW_POST = "com.anomo.bellevue.staging:id/tv_select_group";
+	
 	// Activity card
 	public static String AVATAR_USER_AC = "com.anomo.bellevue.staging:id/ic_avatar";
 	public static String DISPLAY_USERNAME_AC = "com.anomo.bellevue.staging:id/textview_username";
