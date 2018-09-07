@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="screen.SignInScreen">
+      <class name="screen.FeedScreen">
         <methods>
-          <include name="setUpAfterTest"/>
-          <include name="setUpBeforeMethod"/>
+          <include name="verifySignInScreenIsDisplayed"/>
           <include name="setUpAfterMethod"/>
-          <include name="signInPass"/>
           <include name="setUpBeforeTest"/>
+          <include name="setUpBeforeMethod"/>
+          <include name="setUpAfterTest"/>
         </methods>
-      </class> <!-- screen.SignInScreen -->
+      </class> <!-- screen.FeedScreen -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

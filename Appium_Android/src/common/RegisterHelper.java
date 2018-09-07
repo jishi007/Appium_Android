@@ -4,7 +4,7 @@ import io.appium.java_client.MobileElement;
 
 public class RegisterHelper {
 	public static MobileElement getRegisterTitle() {
-		return ApplicationHelper.getElement(ElementDeclaration.TITLE_TEXT_VIEW_REGISTER);
+		return ApplicationHelper.getElement(ElementDeclaration.TITLE_REGISTER);
 	}
 
 	public static MobileElement getBackButton() {

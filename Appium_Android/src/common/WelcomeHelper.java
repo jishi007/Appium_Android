@@ -4,7 +4,7 @@ import io.appium.java_client.MobileElement;
 
 public class WelcomeHelper {
 	public static MobileElement getLogoImage() {
-		return ApplicationHelper.getElementByClass(ElementDeclaration.IMAGE_VIEW_WELCOME_FindByClass);
+		return ApplicationHelper.getElementByClass(ElementDeclaration.LOGO_WELCOME_FindByClass);
 	}
 
 	public static MobileElement getSignInButton() {
