@@ -27,7 +27,7 @@ public class WelcomeScreen {
 	// The annotated method will be run before any test method belonging to the
 	// classes inside the <test> tag is run.
 	@BeforeTest
-	public void setUpBeforeTest() throws Exception {
+	public void setUpBeforeTest() {
 		// launch app
 		screen.launchApp();
 	}
@@ -35,21 +35,21 @@ public class WelcomeScreen {
 	// The annotated method will be run after all the test methods belonging to the
 	// classes inside the tag have run.
 	@AfterTest
-	public void setUpAfterTest() throws Exception {
+	public void setUpAfterTest() {
 		// quit app
 		screen.quitApp();
 	}
 
 	// The annotated method will be run before each test method.
 	@BeforeMethod
-	public void setUpBeforeMethod() throws Exception {
+	public void setUpBeforeMethod() {
 		// sign in if necessary
 		screen.getElementsWelcomeScreen();
 	}
 
 	// The annotated method will be run after each test method.
 	@AfterMethod
-	public void setUpAfterMethod() throws Exception {
+	public void setUpAfterMethod() {
 		// log out if necessary
 	}
 
@@ -82,12 +82,20 @@ public class WelcomeScreen {
 	}
 
 	class Screen {
-		public void launchApp() throws Exception {
-			ApplicationHelper.launchApp();
+		public void launchApp() {
+			try {
+				ApplicationHelper.launchApp();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
 		}
 
-		public void quitApp() throws Exception {
-			ApplicationHelper.quitApp();
+		public void quitApp() {
+			try {
+				ApplicationHelper.quitApp();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
 		}
 
 		public void getElementsWelcomeScreen() {

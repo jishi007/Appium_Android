@@ -15,7 +15,7 @@ public class FeedScreen {
 	// The annotated method will be run before any test method belonging to the
 	// classes inside the <test> tag is run.
 	@BeforeTest
-	public void setUpBeforeTest() throws Exception {
+	public void setUpBeforeTest() {
 		// launch app
 		screen.launchApp();
 		screen.signIn();
@@ -24,21 +24,21 @@ public class FeedScreen {
 	// The annotated method will be run after all the test methods belonging to the
 	// classes inside the tag have run.
 	@AfterTest
-	public void setUpAfterTest() throws Exception {
+	public void setUpAfterTest() {
 		// quit app
 		screen.quitApp();
 	}
 
 	// The annotated method will be run before each test method.
 	@BeforeMethod
-	public void setUpBeforeMethod() throws Exception {
+	public void setUpBeforeMethod() {
 		// sign in if necessary
 
 	}
 
 	// The annotated method will be run after each test method.
 	@AfterMethod
-	public void setUpAfterMethod() throws Exception {
+	public void setUpAfterMethod() {
 		// log out if necessary
 	}
 
@@ -47,73 +47,116 @@ public class FeedScreen {
 	public void verifyFeedScreenIsDisplayed() {
 		screen.verifyUIFeedScreen();
 	}
+	
+	@Test(priority = 2)
+	public void verifyInputStatusPanelIsDisplayedWhenTapOnPostLabel() {
+		screen.verifyUIFeedScreen();
+	}
+
+	// VERIFY FUNCTIONAL SIGN IN SCREEN
+	// User should be able to sign in with valid credentials
+	@Test(priority = 3)
+	public void signInWithValidCredentials() {
+
+	}
 
 	class Screen {
-		public void launchApp() throws Exception {
-			ApplicationHelper.launchApp();
+		public void launchApp() {
+			try {
+				ApplicationHelper.launchApp();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
 		}
 
-		public void quitApp() throws Exception {
-			ApplicationHelper.quitApp();
+		public void quitApp() {
+			try {
+				ApplicationHelper.quitApp();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
 		}
 
 		public void signIn() {
 			SignInHelper.signIn();
 		}
-		
+
 		public void getElementsFeedScreen() {
 			lbFeedTitle = FeedHelper.getFeedTitle();
 			iconLeftMenu = FeedHelper.getLeftMenuIcon();
-			//iconNumberNotification = FeedHelper.getNumberNotification();
-			iconChat = FeedHelper.getChatIcon();	
-			//iconNumberConversation = FeedHelper.getNumberConversation();
+			// iconNumberNotification = FeedHelper.getNumberNotification();
+			iconChat = FeedHelper.getChatIcon();
+			// iconNumberConversation = FeedHelper.getNumberConversation();
 			btnPopularTab = FeedHelper.getPopularTab();
 			btnRecentTab = FeedHelper.getRecentTab();
 			btnFollowingTab = FeedHelper.getFollowingTab();
-			//btnSocialTab = FeedHelper.getSocialTab();
+			// btnSocialTab = FeedHelper.getSocialTab();
 			iconCamera = FeedHelper.getCameraIcon();
 			lbAddToConversation = FeedHelper.getHintAddToConversation();
 			lbPost = FeedHelper.getPostLabel();
 		}
-		
+
 		public void checkFeedTitleIsDisplayed() {
 			ApplicationHelper.checkElementIsDisplayed(lbFeedTitle);
 		}
-		
+
 		public void checkLeftMenuIconIsDisplayed() {
 			ApplicationHelper.checkElementIsDisplayed(iconLeftMenu);
 		}
-		
+
 		public void checkChatIconIsDisplayed() {
 			ApplicationHelper.checkElementIsDisplayed(iconChat);
 		}
-		
+
 		public void checkPopularTabIsDisplayed() {
 			ApplicationHelper.checkElementIsDisplayed(btnPopularTab);
 		}
-		
+
 		public void checkRecentTabIsDisplayed() {
 			ApplicationHelper.checkElementIsDisplayed(btnRecentTab);
 		}
-		
+
 		public void checkFollowingTabIsDisplayed() {
 			ApplicationHelper.checkElementIsDisplayed(btnFollowingTab);
 		}
-		
+
 		public void checkCameraIconIsDisplayed() {
 			ApplicationHelper.checkElementIsDisplayed(iconCamera);
 		}
-		
+
 		public void checkHintAddToConversationIsDisplayed() {
 			ApplicationHelper.checkElementIsDisplayed(lbAddToConversation);
 		}
-		
+
 		public void checkPostLabelIsDisplayed() {
 			ApplicationHelper.checkElementIsDisplayed(lbPost);
 		}
 
 		public void verifyUIFeedScreen() {
+			checkFeedTitleIsDisplayed();
+			checkLeftMenuIconIsDisplayed();
+			checkChatIconIsDisplayed();
+			checkPopularTabIsDisplayed();
+			checkRecentTabIsDisplayed();
+			checkFollowingTabIsDisplayed();
+			checkCameraIconIsDisplayed();
+			checkHintAddToConversationIsDisplayed();
+			checkPostLabelIsDisplayed();
+			System.out.println("Verify UI Feed screen");
+		}
+		
+		public void tapOnPostLabel() {
+			ApplicationHelper.tapButton(lbPost);
+		}
+		
+		public void getElementsBlackTipsBox() {
 			
+		}
+		
+		public void verifyInputStatusPanelIsDisplayed() {
+			lbHintTips = FeedHelper.getHintTipsPanel();
+			iconClose = FeedHelper.getCloseIcon();
+			checkboxTips = FeedHelper.getCheckboxTips();
 		}
 	}
 

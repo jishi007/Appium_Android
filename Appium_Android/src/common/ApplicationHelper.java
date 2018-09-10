@@ -17,6 +17,7 @@ public class ApplicationHelper {
 	public static AppiumDriver<MobileElement> driver = null;
 
 	public static void launchApp() throws Exception {
+		try {
 		System.out.println("Prepare launch app...");
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability(MobileCapabilityType.DEVICE_NAME, ElementDeclaration.deviceName);
@@ -29,33 +30,63 @@ public class ApplicationHelper {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.setLogLevel(Level.INFO);
 		System.out.println("Launch app successfully");
-	}
+		}
+		catch (Exception e) {
+			e.getMessage();
+			System.out.println("Can not launch app!!!");
+		}
+	}  
 
-	public static void quitApp() {
+	public static void quitApp() throws Exception {
+		try {
 		System.out.println("Prepare quit app...");
 		driver.quit();
 		System.out.println("Quit app successfully");
+		}
+		catch (Exception e) {
+			e.getMessage();
+			System.out.println("Error! Can not quit app!!!");
+		}
 	}
 
 	// get element by ID
 	public static MobileElement getElement(String strElement) {
-		return driver.findElementById(strElement);
+		MobileElement mobileElement = driver.findElementById(strElement);
+		if(mobileElement != null)
+			return mobileElement;
+		else { 
+			System.out.println("Error! This element is not existed!!!");
+			return null;
+		}
 	}
 
 	// get element by class
 	public static MobileElement getElementByClass(String strElement) {
-		return driver.findElementByClassName(strElement);
+		MobileElement mobileElement = driver.findElementByClassName(strElement);
+		if(mobileElement != null)
+			return mobileElement;
+		else { 
+			System.out.println("Error! This element is not existed!!!");
+			return null;
+		} 
 	}
 
 	public static void checkElementIsDisplayed(MobileElement mobileElement) {
-		Assert.assertTrue(mobileElement.isDisplayed());
+		if(mobileElement != null)
+			Assert.assertTrue(mobileElement.isDisplayed());
+		else 
+			System.out.println("Error! This element is not displayed!!!");		
 	}
 
 	public static void checkElementIsEnable(MobileElement mobileElement) {
-		Assert.assertTrue(mobileElement.isEnabled());
+		if(mobileElement != null)
+			Assert.assertTrue(mobileElement.isEnabled());
+		else 
+			System.out.println("Error! This element is not enable!!!");	
 	}
 
 	public static void enterValidCredential(MobileElement mobileElement, String str) {
+		checkElementIsDisplayed(mobileElement);
 		mobileElement.sendKeys(str);
 		driver.hideKeyboard();
 	}
