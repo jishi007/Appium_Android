@@ -18,80 +18,74 @@ public class ApplicationHelper {
 
 	public static void launchApp() throws Exception {
 		try {
-		System.out.println("Prepare launch app...");
-		DesiredCapabilities caps = new DesiredCapabilities();
-		caps.setCapability(MobileCapabilityType.DEVICE_NAME, ElementDeclaration.deviceName);
-		caps.setCapability(MobileCapabilityType.PLATFORM_NAME, ElementDeclaration.platformName);
-		caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, ElementDeclaration.platformVersion);
-		caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, ElementDeclaration.appPackage);
-		caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ElementDeclaration.appActivity);
-		caps.setCapability("noReset", "true");
-		driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.setLogLevel(Level.INFO);
-		System.out.println("Launch app successfully");
+			System.out.println("Prepare launch app...");
+			DesiredCapabilities caps = new DesiredCapabilities();
+			caps.setCapability(MobileCapabilityType.DEVICE_NAME, ElementDeclaration.deviceName);
+			caps.setCapability(MobileCapabilityType.PLATFORM_NAME, ElementDeclaration.platformName);
+			caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, ElementDeclaration.platformVersion);
+			caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, ElementDeclaration.appPackage);
+			caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ElementDeclaration.appActivity);
+			caps.setCapability("noReset", "true");
+			driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.setLogLevel(Level.INFO);
+			System.out.println("Launch app successfully!!!");
+		} catch (Exception e) {
+			throw new Exception("Can not launch app!!!", e);
 		}
-		catch (Exception e) {
-			e.getMessage();
-			System.out.println("Can not launch app!!!");
-		}
-	}  
+	}
 
 	public static void quitApp() throws Exception {
 		try {
-		System.out.println("Prepare quit app...");
-		driver.quit();
-		System.out.println("Quit app successfully");
-		}
-		catch (Exception e) {
-			e.getMessage();
-			System.out.println("Error! Can not quit app!!!");
+			System.out.println("Prepare quit app...");
+			driver.quit();
+			System.out.println("Quit app successfully!!!");
+		} catch (Exception e) {
+			throw new Exception("Can not quit app!!!", e);
 		}
 	}
 
 	// get element by ID
-	public static MobileElement getElement(String strElement) {
-		MobileElement mobileElement = driver.findElementById(strElement);
-		if(mobileElement != null)
-			return mobileElement;
-		else { 
-			System.out.println("Error! This element is not existed!!!");
-			return null;
+	public static MobileElement getElement(String strElement) throws Exception {
+		try {
+			return driver.findElementById(strElement);
+		} catch (Exception e) {
+			throw new Exception("Error! Element not found!!!", e);
 		}
 	}
 
 	// get element by class
-	public static MobileElement getElementByClass(String strElement) {
-		MobileElement mobileElement = driver.findElementByClassName(strElement);
-		if(mobileElement != null)
-			return mobileElement;
-		else { 
-			System.out.println("Error! This element is not existed!!!");
-			return null;
-		} 
+	public static MobileElement getElementByClass(String strElement) throws Exception {
+		try {
+			return driver.findElementByClassName(strElement);
+		} catch (Exception e) {
+			throw new Exception("Error! Element not found!!!", e);
+		}
 	}
 
-	public static void checkElementIsDisplayed(MobileElement mobileElement) {
-		if(mobileElement != null)
+	public static void checkElementIsDisplayed(MobileElement mobileElement) throws Exception {
+		try {
 			Assert.assertTrue(mobileElement.isDisplayed());
-		else 
-			System.out.println("Error! This element is not displayed!!!");		
+		} catch (Exception e) {
+			throw new Exception("Error! This element is not displayed!!!", e);
+		}
 	}
 
-	public static void checkElementIsEnable(MobileElement mobileElement) {
-		if(mobileElement != null)
+	public static void checkElementIsEnable(MobileElement mobileElement) throws Exception {
+		try {
 			Assert.assertTrue(mobileElement.isEnabled());
-		else 
-			System.out.println("Error! This element is not enable!!!");	
+		} catch (Exception e) {
+			throw new Exception("Error! This element is not enable!!!", e);
+		}
 	}
 
-	public static void enterValidCredential(MobileElement mobileElement, String str) {
+	public static void enterValidCredential(MobileElement mobileElement, String str) throws Exception {
 		checkElementIsDisplayed(mobileElement);
 		mobileElement.sendKeys(str);
 		driver.hideKeyboard();
 	}
 
-	public static void tapButton(MobileElement mobileElement) {
+	public static void tapButton(MobileElement mobileElement) throws Exception {
 		checkElementIsDisplayed(mobileElement);
 		checkElementIsEnable(mobileElement);
 		mobileElement.click();

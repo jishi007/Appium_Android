@@ -65,14 +65,14 @@ public class ElementDeclaration {
 	public static String POST_BUTTON = "com.anomo.bellevue.staging:id/button_post";
 	public static String UPLOAD_PHOTO_ICON = "com.anomo.bellevue.staging:id/image_attach_photo_post";
 	public static String UPLOAD_VIDEO_ICON = "com.anomo.bellevue.staging:id/image_attach_video_post";
+	// Select groups post
+	public static String GLOBAL_IMAGE_POST = "com.anomo.bellevue.staging:id/iv_feed";
+	public static String SELECT_GROUP_TEXT_VIEW_POST = "com.anomo.bellevue.staging:id/tv_select_group";
 	// Black tips panel
 	public static String HINT_TEXT_TIPS_PANEL = "com.anomo.bellevue.staging:id/hint";
 	public static String CLOSE_ICON_TIPS_PANEL = "com.anomo.bellevue.staging:id/close";
 	public static String CHECKBOX_TIPS_PANEL = "com.anomo.bellevue.staging:id/dont_show";
-	// Select groups post
-	public static String GLOBAL_IMAGE_POST = "com.anomo.bellevue.staging:id/iv_feed";
-	public static String SELECT_GROUP_TEXT_VIEW_POST = "com.anomo.bellevue.staging:id/tv_select_group";
-	
+
 	// Activity card
 	public static String AVATAR_USER_AC = "com.anomo.bellevue.staging:id/ic_avatar";
 	public static String DISPLAY_USERNAME_AC = "com.anomo.bellevue.staging:id/textview_username";

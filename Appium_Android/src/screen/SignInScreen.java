@@ -19,7 +19,7 @@ public class SignInScreen {
 	// The annotated method will be run before any test method belonging to the
 	// classes inside the <test> tag is run.
 	@BeforeTest
-	public void setUpBeforeTest() {
+	public void setUpBeforeTest() throws Exception {
 		// launch app
 		screen.launchApp();
 	}
@@ -27,14 +27,14 @@ public class SignInScreen {
 	// The annotated method will be run after all the test methods belonging to the
 	// classes inside the tag have run.
 	@AfterTest
-	public void setUpAfterTest() {
+	public void setUpAfterTest() throws Exception {
 		// quit app
 		screen.quitApp();
 	}
 
 	// The annotated method will be run before each test method.
 	@BeforeMethod
-	public void setUpBeforeMethod() {
+	public void setUpBeforeMethod() throws Exception {
 		// sign in if necessary
 		screen.openSignInScreen();
 	}
@@ -47,7 +47,7 @@ public class SignInScreen {
 
 	// VERIFY UI SIGN IN SCREEN
 	@Test(priority = 1)
-	public void verifySignInScreenIsDisplayed() {
+	public void verifySignInScreenIsDisplayed() throws Exception {
 		screen.verifyUISignInScreen();
 
 		screen.backToWelcomeScreen();
@@ -56,7 +56,7 @@ public class SignInScreen {
 	// VERIFY FUNCTIONAL SIGN IN SCREEN
 	// User should be able to sign in with valid credentials
 	@Test(priority = 2)
-	public void signInWithValidCredentials() {
+	public void signInWithValidCredentials() throws Exception {
 		screen.inputUsername(ElementDeclaration.strUsername);
 		screen.inputPassword(ElementDeclaration.strPassword);
 
@@ -69,7 +69,7 @@ public class SignInScreen {
 
 	// User should not be allow to sign in with valid username & invalid password
 	@Test(priority = 3)
-	public void signInWithValidUsernameAndInvalidPassword() {
+	public void signInWithValidUsernameAndInvalidPassword() throws Exception {
 		screen.inputUsername(ElementDeclaration.strUsername);
 		screen.inputPassword(ElementDeclaration.strInvalidPassword);
 
@@ -82,7 +82,7 @@ public class SignInScreen {
 
 	// User should not be allow to sign in with invalid username & valid password
 	@Test(priority = 4)
-	public void signInWithInvalidUsernameAndValidPassword() {
+	public void signInWithInvalidUsernameAndValidPassword() throws Exception {
 		screen.inputUsername(ElementDeclaration.strInvalidUsername);
 		screen.inputPassword(ElementDeclaration.strPassword);
 
@@ -95,7 +95,7 @@ public class SignInScreen {
 
 	// User should not be allowed to Login with blank Username field
 	@Test(priority = 5)
-	public void signInWithBlankUsernameField() {
+	public void signInWithBlankUsernameField() throws Exception {
 		screen.inputPassword(ElementDeclaration.strPassword);
 
 		screen.tapOnSignInButton();
@@ -107,7 +107,7 @@ public class SignInScreen {
 
 	// User should not be allowed to Login with blank Password field
 	@Test(priority = 6)
-	public void signInWithBlankPasswordField() {
+	public void signInWithBlankPasswordField() throws Exception {
 		screen.inputUsername(ElementDeclaration.strUsername);
 
 		screen.tapOnSignInButton();
@@ -120,7 +120,7 @@ public class SignInScreen {
 	// User should be redirected to appropriate page when clicking on Forgot
 	// Password
 	@Test(priority = 7)
-	public void redirectToForgotPasswordScreen() {
+	public void redirectToForgotPasswordScreen() throws Exception {
 		screen.tapOnForgetPasswordButton();
 
 		screen.verifyForgotPasswordScreenIsDisplayed();
@@ -129,29 +129,21 @@ public class SignInScreen {
 	}
 
 	class Screen {
-		public void launchApp() {
-			try {
-				ApplicationHelper.launchApp();
-			} catch (Exception e) {
-				System.out.println(e.getMessage());
-			}
+		public void launchApp() throws Exception {
+			ApplicationHelper.launchApp();
 		}
 
-		public void quitApp() {
-			try {
-				ApplicationHelper.quitApp();
-			} catch (Exception e) {
-				System.out.println(e.getMessage());
-			}
+		public void quitApp() throws Exception {
+			ApplicationHelper.quitApp();
 		}
 
-		public void openSignInScreen() {
+		public void openSignInScreen() throws Exception {
 			MobileElement btnSignInWelcomeScreen = WelcomeHelper.getSignInButton();
 			WelcomeHelper.openSignInScreen(btnSignInWelcomeScreen);
 			getElementsSignInScreen();
 		}
 
-		public void getElementsSignInScreen() {
+		public void getElementsSignInScreen() throws Exception {
 			lbSignInTitle = SignInHelper.getSignInTitle();
 			txtUsername = SignInHelper.getUsernameField();
 			txtPassword = SignInHelper.getPasswordField();
@@ -160,119 +152,113 @@ public class SignInScreen {
 			btnBackToWelcomeScreen = SignInHelper.getBackButton();
 		}
 
-		public void getElementsAlertPopup() {
+		public void getElementsAlertPopup() throws Exception {
 			lbAlertTitle = SignInHelper.getAlertTitle();
 			lbAlertMessage = SignInHelper.getAlertMessage();
 			btnAlertConfirm = SignInHelper.getAlertConfirmButton();
 		}
 
-		public void getElementsForgotPasswordScreen() {
+		public void getElementsForgotPasswordScreen() throws Exception {
 			lbForgotPasswordTitle = ForgotPasswordHelper.getForgotPasswordTitle();
 			btnBackToSignInScreen = ForgotPasswordHelper.getBackButton();
 		}
 
-		public void getElementsFeedScreen() {
+		public void getElementsFeedScreen() throws Exception {
 			lbFeedTitle = FeedHelper.getFeedTitle();
 			iconLeftMenu = FeedHelper.getLeftMenuIcon();
 		}
 
-		public void getElementsLeftMenu() {
+		public void getElementsLeftMenu() throws Exception {
 			menuSetting = FeedHelper.getSettingMenu();
 		}
 
-		public void getElementsSettingMenu() {
+		public void getElementsSettingMenu() throws Exception {
 			btnLogOut = FeedHelper.getLogOutButton();
 		}
 
-		public void getElementsConfirmPopup() {
+		public void getElementsConfirmPopup() throws Exception {
 			btnOK = FeedHelper.getOKLogOutButton();
 			btnCancel = FeedHelper.getCancelLogOutButton();
 		}
 
-		public void checkSignInTitleIsDisplayed() {
+		public void checkSignInTitleIsDisplayed() throws Exception {
 			ApplicationHelper.checkElementIsDisplayed(lbSignInTitle);
 			System.out.println("Sign In title is displayed");
 		}
 
-		public void checkUsernameFieldIsDisplayed() {
+		public void checkUsernameFieldIsDisplayed() throws Exception {
 			ApplicationHelper.checkElementIsDisplayed(txtUsername);
 			System.out.println("Username field is displayed");
 		}
 
-		public void checkPasswordFieldIsDisplayed() {
+		public void checkPasswordFieldIsDisplayed() throws Exception {
 			ApplicationHelper.checkElementIsDisplayed(txtPassword);
 			System.out.println("Password field is displayed");
 		}
 
-		public void checkForgotPasswordButtonIsDisplayed() {
+		public void checkForgotPasswordButtonIsDisplayed() throws Exception {
 			ApplicationHelper.checkElementIsDisplayed(btnForgotPassword);
 			System.out.println("Forgot Password button is displayed");
 		}
 
-		public void checkSignInButtonIsDisplayed() {
+		public void checkSignInButtonIsDisplayed() throws Exception {
 			ApplicationHelper.checkElementIsDisplayed(btnSignIn);
 			System.out.println("Sign In button is displayed");
 		}
 
-		public void checkBackButtonIsDisplayed() {
+		public void checkBackButtonIsDisplayed() throws Exception {
 			ApplicationHelper.checkElementIsDisplayed(btnBackToWelcomeScreen);
 			System.out.println("Back button is displayed");
 		}
 
-		public void verifyUISignInScreen() {
+		public void verifyUISignInScreen() throws Exception {
 			checkSignInTitleIsDisplayed();
 			checkUsernameFieldIsDisplayed();
 			checkPasswordFieldIsDisplayed();
 			checkForgotPasswordButtonIsDisplayed();
 			checkSignInButtonIsDisplayed();
 			checkBackButtonIsDisplayed();
-			System.out.println("Verify UI Sign In screen");
+			System.out.println("Verify Sign In screen is displayed!!!");
 		}
 
-		public void inputUsername(String username) {
+		public void inputUsername(String username) throws Exception {
 			SignInHelper.inputUsername(txtUsername, username);
 			System.out.println("Input username: " + username);
 		}
 
-		public void inputPassword(String password) {
+		public void inputPassword(String password) throws Exception {
 			SignInHelper.inputPassword(txtPassword, password);
 			System.out.println("Input password: " + password);
 		}
 
-		public void tapOnSignInButton() {
+		public void tapOnSignInButton() throws Exception {
 			SignInHelper.tapOnSignInButton(btnSignIn);
 		}
 
-		public void logOut() {
-			FeedHelper.openLeftMenu(iconLeftMenu);
-			getElementsLeftMenu();
-			FeedHelper.openSettingMenu(menuSetting);
-			getElementsSettingMenu();
-			FeedHelper.signOut(btnLogOut);
-			getElementsConfirmPopup();
-			FeedHelper.confirmSignOut(btnOK);
+		public void logOut() throws Exception {
+			FeedHelper.logOut(iconLeftMenu);
 		}
 
-		public void backToWelcomeScreen() {
+		public void backToWelcomeScreen() throws Exception {
 			SignInHelper.tapOnBackButton(btnBackToWelcomeScreen);
 		}
 
-		public void backToSignInScreen() {
+		public void backToSignInScreen() throws Exception {
 			SignInHelper.tapOnBackButton(btnBackToSignInScreen);
 		}
 
-		public void verifyFeedScreenIsDisplayed() {
+		public void verifyFeedScreenIsDisplayed() throws Exception {
 			getElementsFeedScreen();
 			ApplicationHelper.checkElementIsDisplayed(lbFeedTitle);
 			Assert.assertEquals("New Feed", lbFeedTitle.getText());
 			System.out.println("User should be able to sign in with valid credentials. Feed screen is displayed");
 		}
 
-		public void tapOnForgetPasswordButton() {
+		public void tapOnForgetPasswordButton() throws Exception {
 			SignInHelper.tapOnBackButton(btnForgotPassword);
 		}
 
-		public void verifyForgotPasswordScreenIsDisplayed() {
+		public void verifyForgotPasswordScreenIsDisplayed() throws Exception {
 			getElementsForgotPasswordScreen();
 			ApplicationHelper.checkElementIsDisplayed(lbForgotPasswordTitle);
 			Assert.assertEquals("Forgot password?", lbForgotPasswordTitle.getText());
@@ -280,11 +266,11 @@ public class SignInScreen {
 					"User should be redirected to appropriate page when clicking on Forgot Password. Forgot password screen is displayed");
 		}
 
-		public void alertLoginUnsuccessfully() {
+		public void alertLoginUnsuccessfully() throws Exception {
 			getElementsAlertPopup();
 			ApplicationHelper.checkElementIsDisplayed(lbAlertMessage);
 			SignInHelper.confirmAlertPopup(btnAlertConfirm);
-			System.out.println("User should not be allow to sign in with valid username & invalid password");
+			System.out.println("User should not be allow to sign in with invalid username or invalid password");
 		}
 	}
 
