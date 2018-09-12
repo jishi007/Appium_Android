@@ -93,6 +93,10 @@ public class FeedHelper {
 
 	public static MobileElement getSettingMenu() throws Exception {
 		return ApplicationHelper.getElement(ElementDeclaration.SETTING_LEFT_MENU);
+	}	
+	
+	public static MobileElement getFeedMenu() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.FEED_LEFT_MENU);
 	}
 
 	public static MobileElement getLogOutButton() throws Exception {
@@ -106,33 +110,52 @@ public class FeedHelper {
 	public static MobileElement getCancelLogOutButton() throws Exception {
 		return ApplicationHelper.getElement(ElementDeclaration.CANCEL_SIGNOUT_BUTTON_SETTING);
 	}
-
-	public static void openLeftMenu(MobileElement iconLeftMenu) throws Exception {
-		ApplicationHelper.tapButton(iconLeftMenu);
-		System.out.println("Open Left menu");
+	
+	public static void openInputStatusPanel() throws Exception {
+		ApplicationHelper.tapButton(getPostLabel());
+		System.out.println("Open Input Status panel");
 	}
 
-	public static void openSettingMenu(MobileElement menuSetting) throws Exception {
-		ApplicationHelper.tapButton(menuSetting);
+	public static void openLeftMenu() throws Exception {
+		ApplicationHelper.tapButton(getLeftMenuIcon());
+		System.out.println("Open Left menu");
+	}
+	
+	public static void openFeedScreen() throws Exception {
+		openLeftMenu();
+		ApplicationHelper.tapButton(getFeedMenu());
+		System.out.println("Open Feed screen");
+	}
+
+	public static void openSettingScreen() throws Exception {
+		ApplicationHelper.tapButton(getSettingMenu());
 		System.out.println("Open Setting menu");
 	}
 
-	public static void tapOnLogOutButton(MobileElement btnLogOut) throws Exception {
+	public static void tapOnLogOutButton() throws Exception {
 		System.out.println("Prepare sign out...");
-		ApplicationHelper.tapButton(btnLogOut);
+		ApplicationHelper.tapButton(getLogOutButton());
 		System.out.println("Log out successfully. Welcome screen is displayed");
 	}
 	
-	public static void logOut(MobileElement iconLeftMenu) throws Exception {
-		openLeftMenu(iconLeftMenu);		
-		openSettingMenu(getSettingMenu());
-		tapOnLogOutButton(getLogOutButton());
-		confirmSignOut(getOKLogOutButton());
+	public static void logOut() throws Exception {
+		openLeftMenu();		
+		openSettingScreen();
+		tapOnLogOutButton();
+		confirmSignOut();
 	}
 
-	public static void confirmSignOut(MobileElement btnOK) throws Exception {
+	public static void confirmSignOut() throws Exception {
 		System.out.println("Prepare sign out...");
-		ApplicationHelper.tapButton(btnOK);
+		ApplicationHelper.tapButton(getOKLogOutButton());
 		System.out.println("Log out successfully. Welcome screen is displayed");
+	}
+	
+	public static void inputContentStatus(MobileElement txtInputStatusField, String strStatusPost) throws Exception {
+		ApplicationHelper.enterValidCredential(txtInputStatusField, strStatusPost);
+	}
+	
+	public static void tapOnPostButton(MobileElement btnPost) throws Exception {
+		ApplicationHelper.tapButton(btnPost);
 	}
 }

@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="2" failed="4" skipped="0">
+<testng-results ignored="0" total="7" passed="4" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-09-11T11:07:05Z" name="Default suite" finished-at="2018-09-11T11:12:12Z" duration-ms="306774">
+  <suite started-at="2018-09-12T12:32:28Z" name="Default suite" finished-at="2018-09-12T12:34:13Z" duration-ms="105341">
     <groups>
     </groups>
-    <test started-at="2018-09-11T11:07:05Z" name="Default test" finished-at="2018-09-11T11:12:12Z" duration-ms="306774">
+    <test started-at="2018-09-12T12:32:28Z" name="Default test" finished-at="2018-09-12T12:34:13Z" duration-ms="105341">
       <class name="screen.FeedScreen">
-        <test-method is-config="true" signature="setUpBeforeTest()[pri:0, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:07:05Z" name="setUpBeforeTest" finished-at="2018-09-11T11:07:17Z" duration-ms="11908" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeTest()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:32:28Z" name="setUpBeforeTest" finished-at="2018-09-12T12:33:06Z" duration-ms="38191" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeTest -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:07:17Z" name="setUpBeforeMethod" finished-at="2018-09-11T11:07:44Z" duration-ms="27077" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:06Z" name="setUpBeforeMethod" finished-at="2018-09-12T12:33:06Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeMethod -->
-        <test-method signature="verifyFeedScreenIsDisplayed()[pri:1, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:07:44Z" name="verifyFeedScreenIsDisplayed" finished-at="2018-09-11T11:07:44Z" duration-ms="471" status="PASS">
+        <test-method signature="verifyFeedScreenIsDisplayed()[pri:1, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:06Z" name="verifyFeedScreenIsDisplayed" finished-at="2018-09-12T12:33:07Z" duration-ms="621" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFeedScreenIsDisplayed -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:07:44Z" name="setUpAfterMethod" finished-at="2018-09-11T11:07:49Z" duration-ms="4726" status="PASS">
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:07Z" name="setUpAfterMethod" finished-at="2018-09-12T12:33:07Z" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:07:49Z" name="setUpBeforeMethod" finished-at="2018-09-11T11:08:12Z" duration-ms="23065" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:07Z" name="setUpBeforeMethod" finished-at="2018-09-12T12:33:07Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeMethod -->
-        <test-method signature="verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabel()[pri:2, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:08:12Z" name="verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabel" finished-at="2018-09-11T11:08:43Z" duration-ms="30645" status="FAIL">
+        <test-method signature="verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime()[pri:2, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:07Z" name="verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime" finished-at="2018-09-12T12:33:18Z" duration-ms="10873" status="FAIL">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Error! Element not found!!!]]>
@@ -36,9 +36,8 @@
               <![CDATA[java.lang.Exception: Error! Element not found!!!
 at common.ApplicationHelper.getElement(ApplicationHelper.java:53)
 at common.FeedHelper.getHintTipsPanel(FeedHelper.java:75)
-at screen.FeedScreen$Screen.getElementsBlackTipsBox(FeedScreen.java:161)
-at screen.FeedScreen$Screen.tapOnPostLabelToOpenInputStatusPanel(FeedScreen.java:147)
-at screen.FeedScreen.verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabel(FeedScreen.java:53)
+at screen.FeedScreen$Screen.getElementsBlackTipsBox(FeedScreen.java:206)
+at screen.FeedScreen.verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime(FeedScreen.java:59)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -70,7 +69,7 @@ Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:32:14.9
 System info: host: 'DESKTOP-1V9PIPH', ip: '169.254.62.176', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {appActivity: com.anomo.uclasocial.Splash..., appPackage: com.anomo.bellevue.staging, databaseEnabled: false, desired: {appActivity: com.anomo.uclasocial.Splash..., appPackage: com.anomo.bellevue.staging, deviceName: Nexus 5, noReset: true, platformName: android, platformVersion: 6.0.1}, deviceManufacturer: LGE, deviceModel: Nexus 5, deviceName: 038c46ce0ac97606, deviceScreenSize: 1080x1920, deviceUDID: 038c46ce0ac97606, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noReset: true, platform: LINUX, platformName: Android, platformVersion: 6.0.1, takesScreenshot: true, warnings: {}, webStorageEnabled: false}
-Session ID: 04ff15d3-fdc4-4ef7-b07a-d8cca081b019
+Session ID: 6bdf8b25-7309-4701-8bd0-6cb31e69c7f1
 *** Element info: {Using=id, value=com.anomo.bellevue.staging:id/hint}
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -94,33 +93,31 @@ at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGener
 at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
 at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
 at common.ApplicationHelper.getElement(ApplicationHelper.java:51)
-... 29 more
+... 28 more
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.Exception -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabel -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:08:43Z" name="setUpAfterMethod" finished-at="2018-09-11T11:08:47Z" duration-ms="4443" status="PASS">
+        </test-method> <!-- verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime -->
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:18Z" name="setUpAfterMethod" finished-at="2018-09-12T12:33:18Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:08:47Z" name="setUpBeforeMethod" finished-at="2018-09-11T11:09:09Z" duration-ms="21944" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:18Z" name="setUpBeforeMethod" finished-at="2018-09-12T12:33:18Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeMethod -->
-        <test-method signature="verifyInputStatusPanelIsDisplayedAtTheFirstTime()[pri:3, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:09:09Z" name="verifyInputStatusPanelIsDisplayedAtTheFirstTime" finished-at="2018-09-11T11:09:40Z" duration-ms="30937" status="FAIL">
+        <test-method signature="verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime()[pri:3, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:18Z" name="verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime" finished-at="2018-09-12T12:33:18Z" duration-ms="629" status="FAIL">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Error! Element not found!!!]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Error! Element not found!!!
-at common.ApplicationHelper.getElement(ApplicationHelper.java:53)
-at common.FeedHelper.getHintTipsPanel(FeedHelper.java:75)
-at screen.FeedScreen$Screen.getElementsBlackTipsBox(FeedScreen.java:161)
-at screen.FeedScreen$Screen.tapOnPostLabelToOpenInputStatusPanel(FeedScreen.java:147)
-at screen.FeedScreen.verifyInputStatusPanelIsDisplayedAtTheFirstTime(FeedScreen.java:62)
+at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:70)
+at screen.FeedScreen$Screen.verifyBlackTipsPanelIsDisplayed(FeedScreen.java:212)
+at screen.FeedScreen.verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime(FeedScreen.java:68)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -146,63 +143,34 @@ at org.testng.TestNG.run(TestNG.java:1017)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:32:14.902Z'
-System info: host: 'DESKTOP-1V9PIPH', ip: '169.254.62.176', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.anomo.uclasocial.Splash..., appPackage: com.anomo.bellevue.staging, databaseEnabled: false, desired: {appActivity: com.anomo.uclasocial.Splash..., appPackage: com.anomo.bellevue.staging, deviceName: Nexus 5, noReset: true, platformName: android, platformVersion: 6.0.1}, deviceManufacturer: LGE, deviceModel: Nexus 5, deviceName: 038c46ce0ac97606, deviceScreenSize: 1080x1920, deviceUDID: 038c46ce0ac97606, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noReset: true, platform: LINUX, platformName: Android, platformVersion: 6.0.1, takesScreenshot: true, warnings: {}, webStorageEnabled: false}
-Session ID: 04ff15d3-fdc4-4ef7-b07a-d8cca081b019
-*** Element info: {Using=id, value=com.anomo.bellevue.staging:id/hint}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:368)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at common.ApplicationHelper.getElement(ApplicationHelper.java:51)
-... 29 more
+Caused by: java.lang.NullPointerException
+at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:68)
+... 27 more
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.Exception -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyInputStatusPanelIsDisplayedAtTheFirstTime -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:09:40Z" name="setUpAfterMethod" finished-at="2018-09-11T11:09:45Z" duration-ms="4545" status="PASS">
+        </test-method> <!-- verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime -->
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:18Z" name="setUpAfterMethod" finished-at="2018-09-12T12:33:18Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:09:45Z" name="setUpBeforeMethod" finished-at="2018-09-11T11:10:07Z" duration-ms="22081" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:18Z" name="setUpBeforeMethod" finished-at="2018-09-12T12:33:18Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeMethod -->
-        <test-method signature="verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain()[pri:4, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:10:07Z" name="verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain" finished-at="2018-09-11T11:10:38Z" duration-ms="30897" status="FAIL">
+        <test-method signature="verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain()[pri:4, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:18Z" name="verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain" finished-at="2018-09-12T12:33:22Z" duration-ms="3799" status="FAIL">
           <exception class="java.lang.Exception">
             <message>
-              <![CDATA[Error! Element not found!!!]]>
+              <![CDATA[Error! This element is not enable!!!]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Exception: Error! Element not found!!!
-at common.ApplicationHelper.getElement(ApplicationHelper.java:53)
-at common.FeedHelper.getHintTipsPanel(FeedHelper.java:75)
-at screen.FeedScreen$Screen.getElementsBlackTipsBox(FeedScreen.java:161)
-at screen.FeedScreen$Screen.tapOnPostLabelToOpenInputStatusPanel(FeedScreen.java:147)
-at screen.FeedScreen.verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain(FeedScreen.java:70)
+              <![CDATA[java.lang.Exception: Error! This element is not enable!!!
+at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:86)
+at common.ApplicationHelper.tapButton(ApplicationHelper.java:109)
+at screen.FeedScreen$Screen.checkedDontShowAgain(FeedScreen.java:202)
+at screen.FeedScreen.verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain(FeedScreen.java:74)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -228,142 +196,56 @@ at org.testng.TestNG.run(TestNG.java:1017)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:32:14.902Z'
-System info: host: 'DESKTOP-1V9PIPH', ip: '169.254.62.176', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.anomo.uclasocial.Splash..., appPackage: com.anomo.bellevue.staging, databaseEnabled: false, desired: {appActivity: com.anomo.uclasocial.Splash..., appPackage: com.anomo.bellevue.staging, deviceName: Nexus 5, noReset: true, platformName: android, platformVersion: 6.0.1}, deviceManufacturer: LGE, deviceModel: Nexus 5, deviceName: 038c46ce0ac97606, deviceScreenSize: 1080x1920, deviceUDID: 038c46ce0ac97606, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noReset: true, platform: LINUX, platformName: Android, platformVersion: 6.0.1, takesScreenshot: true, warnings: {}, webStorageEnabled: false}
-Session ID: 04ff15d3-fdc4-4ef7-b07a-d8cca081b019
-*** Element info: {Using=id, value=com.anomo.bellevue.staging:id/hint}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:368)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at common.ApplicationHelper.getElement(ApplicationHelper.java:51)
-... 29 more
+Caused by: java.lang.NullPointerException
+at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:84)
+... 28 more
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.Exception -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:10:38Z" name="setUpAfterMethod" finished-at="2018-09-11T11:10:42Z" duration-ms="4588" status="PASS">
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:22Z" name="setUpAfterMethod" finished-at="2018-09-12T12:33:22Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:10:42Z" name="setUpBeforeMethod" finished-at="2018-09-11T11:11:04Z" duration-ms="22238" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:22Z" name="setUpBeforeMethod" finished-at="2018-09-12T12:33:22Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeMethod -->
-        <test-method signature="verifyInputStatusPanelIsDisplayedWhenTapOnPostLabel()[pri:5, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:11:04Z" name="verifyInputStatusPanelIsDisplayedWhenTapOnPostLabel" finished-at="2018-09-11T11:11:35Z" duration-ms="30514" status="FAIL">
-          <exception class="java.lang.Exception">
-            <message>
-              <![CDATA[Error! Element not found!!!]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Exception: Error! Element not found!!!
-at common.ApplicationHelper.getElement(ApplicationHelper.java:53)
-at common.FeedHelper.getHintTipsPanel(FeedHelper.java:75)
-at screen.FeedScreen$Screen.getElementsBlackTipsBox(FeedScreen.java:161)
-at screen.FeedScreen$Screen.tapOnPostLabelToOpenInputStatusPanel(FeedScreen.java:147)
-at screen.FeedScreen.verifyInputStatusPanelIsDisplayedWhenTapOnPostLabel(FeedScreen.java:78)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.base/java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:32:14.902Z'
-System info: host: 'DESKTOP-1V9PIPH', ip: '169.254.62.176', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.anomo.uclasocial.Splash..., appPackage: com.anomo.bellevue.staging, databaseEnabled: false, desired: {appActivity: com.anomo.uclasocial.Splash..., appPackage: com.anomo.bellevue.staging, deviceName: Nexus 5, noReset: true, platformName: android, platformVersion: 6.0.1}, deviceManufacturer: LGE, deviceModel: Nexus 5, deviceName: 038c46ce0ac97606, deviceScreenSize: 1080x1920, deviceUDID: 038c46ce0ac97606, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noReset: true, platform: LINUX, platformName: Android, platformVersion: 6.0.1, takesScreenshot: true, warnings: {}, webStorageEnabled: false}
-Session ID: 04ff15d3-fdc4-4ef7-b07a-d8cca081b019
-*** Element info: {Using=id, value=com.anomo.bellevue.staging:id/hint}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:368)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
-at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-at common.ApplicationHelper.getElement(ApplicationHelper.java:51)
-... 29 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Exception -->
+        <test-method signature="verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain()[pri:5, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:22Z" name="verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain" finished-at="2018-09-12T12:33:28Z" duration-ms="6320" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyInputStatusPanelIsDisplayedWhenTapOnPostLabel -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:11:35Z" name="setUpAfterMethod" finished-at="2018-09-11T11:11:40Z" duration-ms="4615" status="PASS">
+        </test-method> <!-- verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain -->
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:28Z" name="setUpAfterMethod" finished-at="2018-09-12T12:33:28Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:11:40Z" name="setUpBeforeMethod" finished-at="2018-09-11T11:12:02Z" duration-ms="21998" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:28Z" name="setUpBeforeMethod" finished-at="2018-09-12T12:33:28Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeMethod -->
-        <test-method signature="signInWithValidCredentials()[pri:6, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:12:02Z" name="signInWithValidCredentials" finished-at="2018-09-11T11:12:02Z" duration-ms="1" status="PASS">
+        <test-method signature="verifyPostButtonIsDisableWWithEmptyContent()[pri:6, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:28Z" name="verifyPostButtonIsDisableWWithEmptyContent" finished-at="2018-09-12T12:33:38Z" duration-ms="10184" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- signInWithValidCredentials -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:12:02Z" name="setUpAfterMethod" finished-at="2018-09-11T11:12:06Z" duration-ms="4720" status="PASS">
+        </test-method> <!-- verifyPostButtonIsDisableWWithEmptyContent -->
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:38Z" name="setUpAfterMethod" finished-at="2018-09-12T12:33:38Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method is-config="true" signature="setUpAfterTest()[pri:0, instance:screen.FeedScreen@5c671d7f]" started-at="2018-09-11T11:12:06Z" name="setUpAfterTest" finished-at="2018-09-11T11:12:12Z" duration-ms="5305" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:38Z" name="setUpBeforeMethod" finished-at="2018-09-12T12:33:38Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeMethod -->
+        <test-method signature="createValidNewPostText()[pri:7, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:33:38Z" name="createValidNewPostText" finished-at="2018-09-12T12:34:04Z" duration-ms="25995" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createValidNewPostText -->
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:34:04Z" name="setUpAfterMethod" finished-at="2018-09-12T12:34:04Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpAfterMethod -->
+        <test-method is-config="true" signature="setUpAfterTest()[pri:0, instance:screen.FeedScreen@757277dc]" started-at="2018-09-12T12:34:04Z" name="setUpAfterTest" finished-at="2018-09-12T12:34:13Z" duration-ms="8657" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterTest -->

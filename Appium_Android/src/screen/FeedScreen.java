@@ -1,12 +1,15 @@
 package screen;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import common.ActivityCardHelper;
 import common.ApplicationHelper;
+import common.ElementDeclaration;
 import common.FeedHelper;
 import common.SignInHelper;
 import io.appium.java_client.MobileElement;
@@ -18,6 +21,7 @@ public class FeedScreen {
 	public void setUpBeforeTest() throws Exception {
 		// launch app
 		screen.launchApp();
+		screen.signIn();
 	}
 
 	// The annotated method will be run after all the test methods belonging to the
@@ -25,6 +29,7 @@ public class FeedScreen {
 	@AfterTest
 	public void setUpAfterTest() throws Exception {
 		// quit app
+		screen.logOut();
 		screen.quitApp();
 	}
 
@@ -32,14 +37,14 @@ public class FeedScreen {
 	@BeforeMethod
 	public void setUpBeforeMethod() throws Exception {
 		// sign in if necessary
-		screen.signIn();
+		
 	}
 
 	// The annotated method will be run after each test method.
 	@AfterMethod
 	public void setUpAfterMethod() throws Exception {
 		// log out if necessary
-		screen.logOut();
+		
 	}
 
 	// VERIFY UI FEED SCREEN
@@ -49,42 +54,56 @@ public class FeedScreen {
 	}
 
 	@Test(priority = 2)
-	public void verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabel() throws Exception {
-		screen.tapOnPostLabelToOpenInputStatusPanel();
-
+	public void verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime() throws Exception {
+		screen.tapOnPostLabel();
+		screen.getElementsBlackTipsBox();
+		
 		screen.verifyBlackTipsPanelIsDisplayed();
-
-		screen.tapOnXIconToCloseBlackTipsPanel();
 	}
-
+	
 	@Test(priority = 3)
-	public void verifyInputStatusPanelIsDisplayedAtTheFirstTime() throws Exception {
-		screen.tapOnPostLabelToOpenInputStatusPanel();
-		screen.tapOnXIconToCloseBlackTipsPanel();
-
-		screen.verifyInputStatusPanelIsDisplayed();
+	public void verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime() throws Exception {
+		screen.tapOnPostLabel();
+		
+		screen.verifyBlackTipsPanelIsDisplayed();
 	}
 	
 	@Test(priority = 4)
 	public void verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain() throws Exception {
-		screen.tapOnPostLabelToOpenInputStatusPanel();
+		screen.tapOnPostLabel();
 		screen.checkedDontShowAgain();
-
+		screen.tapOnXIconToCloseBlackTipsPanel();
+		screen.openFeedScreen();
+		screen.tapOnPostLabel();
+		
 		screen.verifyBlackTipsPanelNotDisplayedAnymore();
 	}
 	
 	@Test(priority = 5)
-	public void verifyInputStatusPanelIsDisplayedWhenTapOnPostLabel() throws Exception {
-		screen.tapOnPostLabelToOpenInputStatusPanel();
-
+	public void verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain() throws Exception {
+		screen.tapOnPostLabel();
+		screen.getElementsInputStatusPanel();
+		
 		screen.verifyInputStatusPanelIsDisplayed();
 	}
 
 	// VERIFY FUNCTIONAL SIGN IN SCREEN
 	// User should be able to sign in with valid credentials
 	@Test(priority = 6)
-	public void signInWithValidCredentials() {
-
+	public void verifyPostButtonIsDisableWWithEmptyContent() throws Exception {
+		screen.tapOnPostLabel();
+		screen.inputContentStatus(ElementDeclaration.strInvalidStatusPost);
+		
+		screen.verifyPostButtonIsDisable();
+	}
+	
+	@Test(priority = 7)
+	public void createValidNewPostText() throws Exception {
+		screen.tapOnPostLabel();
+		screen.inputContentStatus(ElementDeclaration.strStatusPost);
+		screen.tapOnPostPostButton();
+		
+		screen.verifyPostText();
 	}
 
 	class Screen {
@@ -102,7 +121,11 @@ public class FeedScreen {
 		}
 
 		public void logOut() throws Exception {
-			FeedHelper.logOut(iconLeftMenu);
+			FeedHelper.logOut();
+		}
+		
+		public void openFeedScreen() throws Exception {
+			FeedHelper.openFeedScreen();
 		}
 
 		public void getElementsFeedScreen() throws Exception {
@@ -141,10 +164,33 @@ public class FeedScreen {
 			System.out.println("Post label is displayed!!!");
 			System.out.println("Verify Feed screen is displayed!!!");
 		}
+		
+		public void getElementsActivityCard() throws Exception {
+			lbContentStatus = ActivityCardHelper.getContentStatus();
+		}
+		
+		public void inputContentStatus(String strStatusPost) throws Exception {
+			FeedHelper.inputContentStatus(txtStatusContent, strStatusPost);
+			System.out.println("Input content status: " + strStatusPost);
+		}
+		
+		public void tapOnPostPostButton() throws Exception {
+			FeedHelper.tapOnPostButton(btnPost);
+			getElementsActivityCard();
+		}
+		
+		public void verifyPostButtonIsDisable() throws Exception {
+			ApplicationHelper.checkElementIsDisable(btnPost);
+			System.out.println("Post button is disable");
+		}
+		
+		public void verifyPostText() throws Exception {
+			Assert.assertEquals(ElementDeclaration.strStatusPost, lbContentStatus.getText());
+			System.out.println("Post Successfully");
+		}
 
-		public void tapOnPostLabelToOpenInputStatusPanel() throws Exception {
-			ApplicationHelper.tapButton(lbPost);
-			getElementsBlackTipsBox();
+		public void tapOnPostLabel() throws Exception {
+			FeedHelper.openInputStatusPanel();			
 		}
 
 		public void tapOnXIconToCloseBlackTipsPanel() throws Exception {
@@ -154,7 +200,6 @@ public class FeedScreen {
 		
 		public void checkedDontShowAgain() throws Exception {
 			ApplicationHelper.tapButton(checkboxTips);
-			getElementsBlackTipsBox();
 		}
 
 		public void getElementsBlackTipsBox() throws Exception {
@@ -171,11 +216,14 @@ public class FeedScreen {
 			ApplicationHelper.checkElementIsDisplayed(checkboxTips);
 			System.out.println("Checkbox 'Dont show again' is displayed!!!");
 			System.out.println("Verify Black tips panel is displayed!!!");
+			tapOnXIconToCloseBlackTipsPanel();
+			openFeedScreen();
 		}
 
 		public void verifyBlackTipsPanelNotDisplayedAnymore() throws Exception {
-			ApplicationHelper.checkElementIsDisplayed(lbHintTips);
+			ApplicationHelper.checkElementIsNotDisplayed(lbHintTips);
 			System.out.println("Verify Black tips panel is not displayed anymore after checked Dont show again!!!");
+			openFeedScreen();
 		}
 		
 		public void getElementsInputStatusPanel() throws Exception {
@@ -202,6 +250,7 @@ public class FeedScreen {
 			ApplicationHelper.checkElementIsDisplayed(lbSelectGroup);
 			System.out.println("Select group box is displayed!!!");
 			System.out.println("Verify Input status field is displayed!!!");
+			openFeedScreen();
 		}
 	}
 

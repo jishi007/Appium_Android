@@ -15,6 +15,7 @@ public class ElementDeclaration {
 	public static String LOGO_WELCOME_FindByClass = "android.widget.ImageView";
 
 	// Left menu
+	public static String FEED_LEFT_MENU = "com.anomo.bellevue.staging:id/textview_menu_name_activity_feed";
 	public static String SETTING_LEFT_MENU = "com.anomo.bellevue.staging:id/textview_menu_name_settings";
 
 	// Setting screen
@@ -72,6 +73,15 @@ public class ElementDeclaration {
 	public static String HINT_TEXT_TIPS_PANEL = "com.anomo.bellevue.staging:id/hint";
 	public static String CLOSE_ICON_TIPS_PANEL = "com.anomo.bellevue.staging:id/close";
 	public static String CHECKBOX_TIPS_PANEL = "com.anomo.bellevue.staging:id/dont_show";
+	
+	//Upload Photo/ Video
+	public static String TAKE_PHOTO_VIDEO_BUTTON = "com.anomo.bellevue.staging:id/btn_take_photo";
+	public static String TAKE_PHOTO_VIDEO_BUTTON_DEVICE = "com.android.camera2:id/photo_video_button";
+	public static String TAKE_PHOTO_VIDEO_DONE_BUTTON_DEVICE = "com.android.camera2:id/done_button";
+	public static String TRIM_VIDEO_DONE_BUTTON = "com.anomo.bellevue.staging:id/button_done";
+	public static String SAVE_PHOTO_VIDEO_BUTTON = "com.anomo.bellevue.staging:id/button_save";
+	public static String CHOOSE_PHOTO_VIDEO_BUTTON = "com.anomo.bellevue.staging:id/btn_choose_photo";
+	public static String CANCEL_UPLOAD_PHOTO_VIDEO = "com.anomo.bellevue.staging:id/button_cancel_photo";	
 
 	// Activity card
 	public static String AVATAR_USER_AC = "com.anomo.bellevue.staging:id/ic_avatar";

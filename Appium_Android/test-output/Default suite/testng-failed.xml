@@ -5,14 +5,13 @@
     <classes>
       <class name="screen.FeedScreen">
         <methods>
-          <include name="verifyInputStatusPanelIsDisplayedAtTheFirstTime"/>
-          <include name="verifyInputStatusPanelIsDisplayedWhenTapOnPostLabel"/>
           <include name="setUpAfterMethod"/>
+          <include name="verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime"/>
           <include name="setUpBeforeTest"/>
           <include name="verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain"/>
-          <include name="verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabel"/>
           <include name="setUpBeforeMethod"/>
           <include name="setUpAfterTest"/>
+          <include name="verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime"/>
         </methods>
       </class> <!-- screen.FeedScreen -->
     </classes>

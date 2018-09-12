@@ -27,7 +27,7 @@ public class ApplicationHelper {
 			caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ElementDeclaration.appActivity);
 			caps.setCapability("noReset", "true");
 			driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.setLogLevel(Level.INFO);
 			System.out.println("Launch app successfully!!!");
 		} catch (Exception e) {
@@ -52,7 +52,7 @@ public class ApplicationHelper {
 		} catch (Exception e) {
 			throw new Exception("Error! Element not found!!!", e);
 		}
-	}
+	}	
 
 	// get element by class
 	public static MobileElement getElementByClass(String strElement) throws Exception {
@@ -67,7 +67,15 @@ public class ApplicationHelper {
 		try {
 			Assert.assertTrue(mobileElement.isDisplayed());
 		} catch (Exception e) {
-			throw new Exception("Error! This element is not displayed!!!", e);
+			throw new Exception("Error! Element not found!!!", e);
+		}
+	}
+	
+	public static void checkElementIsNotDisplayed(MobileElement mobileElement) throws Exception {
+		try {
+			Assert.assertFalse(mobileElement.isDisplayed());
+		} catch (Exception e) {
+			throw new Exception("Error! Element not found!!!", e);
 		}
 	}
 
@@ -78,15 +86,26 @@ public class ApplicationHelper {
 			throw new Exception("Error! This element is not enable!!!", e);
 		}
 	}
+	
+	public static void checkElementIsDisable(MobileElement mobileElement) throws Exception {
+		try {
+			Assert.assertFalse(mobileElement.isEnabled());
+		} catch (Exception e) {
+			throw new Exception("Error! This element is not enable!!!", e);
+		}
+	}
+	
+	public static void clearTextField(MobileElement mobileElement) throws Exception {
+		mobileElement.clear();
+		driver.hideKeyboard();
+	}
 
 	public static void enterValidCredential(MobileElement mobileElement, String str) throws Exception {
-		checkElementIsDisplayed(mobileElement);
 		mobileElement.sendKeys(str);
 		driver.hideKeyboard();
 	}
 
 	public static void tapButton(MobileElement mobileElement) throws Exception {
-		checkElementIsDisplayed(mobileElement);
 		checkElementIsEnable(mobileElement);
 		mobileElement.click();
 	}

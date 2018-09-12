@@ -53,12 +53,9 @@ public class SignInHelper {
 
 	public static void signIn() throws Exception {
 		WelcomeHelper.openSignInScreen(WelcomeHelper.getSignInButton());
-		MobileElement txtUsername = getUsernameField();
-		MobileElement txtPassword = getPasswordField();
-		MobileElement btnSignIn = getSignInButton();
-		inputUsername(txtUsername, ElementDeclaration.strUsername);
-		inputPassword(txtPassword, ElementDeclaration.strPassword);
-		ApplicationHelper.tapButton(btnSignIn);
+		inputUsername(getUsernameField(), ElementDeclaration.strUsername);
+		inputPassword(getPasswordField(), ElementDeclaration.strPassword);
+		ApplicationHelper.tapButton(getSignInButton());
 		System.out.println("Feed screen is displayed");
 	}
 
@@ -68,8 +65,8 @@ public class SignInHelper {
 		System.out.println("Back to Welcome screen successfully");
 	}
 
-	public static void tapOnForgotPassword(MobileElement btnForgotPassword) throws Exception {
-		ApplicationHelper.tapButton(btnForgotPassword);
+	public static void tapOnForgotPassword(MobileElement btnForgorPassword) throws Exception {
+		ApplicationHelper.tapButton(btnForgorPassword);
 		System.out.println("Open Forgot Password screen successfully");
 	}
 
