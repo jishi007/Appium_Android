@@ -16,6 +16,7 @@ public class ElementDeclaration {
 
 	// Left menu
 	public static String FEED_LEFT_MENU = "com.anomo.bellevue.staging:id/textview_menu_name_activity_feed";
+	public static String USERNAME_LEFT_MENU = "com.anomo.bellevue.staging:id/textview_left_username";
 	public static String SETTING_LEFT_MENU = "com.anomo.bellevue.staging:id/textview_menu_name_settings";
 
 	// Setting screen
@@ -84,23 +85,36 @@ public class ElementDeclaration {
 	public static String CANCEL_UPLOAD_PHOTO_VIDEO = "com.anomo.bellevue.staging:id/button_cancel_photo";	
 
 	// Activity card
+	public static String BACK_BUTTON_DETAIL_AC = "com.anomo.bellevue.staging:id/button_back";
 	public static String AVATAR_USER_AC = "com.anomo.bellevue.staging:id/ic_avatar";
 	public static String DISPLAY_USERNAME_AC = "com.anomo.bellevue.staging:id/textview_username";
 	public static String ADDRESS_USERNAME_AC = "com.anomo.bellevue.staging:id/textview_user_address";
 	public static String OPTION_ICON_AC = "com.anomo.bellevue.staging:id/button_option";
 	public static String DATETIME_AC = "com.anomo.bellevue.staging:id/txt_date_2";
 	public static String CONTENT_STATUS_AC = "com.anomo.bellevue.staging:id/textview_post_status_content";
+	public static String PICTURE_POST_AC = "com.anomo.bellevue.staging:id/img_post";
+	public static String PLAY_ICON_AC = "com.anomo.bellevue.staging:id/imageview_play_youtube";
 	public static String TITLE_GROUP_AC = "com.anomo.bellevue.staging:id/textview_stream_title";
 	public static String CONTENT_GROUP_AC = "com.anomo.bellevue.staging:id/textview_stream_content";
 	public static String LIKE_BUTTON_AC = "com.anomo.bellevue.staging:id/button_like";
 	public static String NUMBER_OF_LIKE_AC = "com.anomo.bellevue.staging:id/textview_number_of_like";
 	public static String COMMENT_BUTTON_AC = "com.anomo.bellevue.staging:id/button_comment";
 	public static String NUMBER_OF_COMMENT_AC = "com.anomo.bellevue.staging:id/textview_number_of_comment";
+	
+	// Comment card
+	public static String DISPLAY_USERNAME_COMMENT = "com.anomo.bellevue.staging:id/textview_username";
+	public static String AVATAR_COMMENT = "com.anomo.bellevue.staging:id/ic_avatar";
+	public static String DATETIME_COMMENT = "com.anomo.bellevue.staging:id/txt_date_2";
+	public static String INPUT_CONTENT_COMMENT_FIELD = "com.anomo.bellevue.staging:id/edit_message_post";
+	public static String POST_COMMENT_BUTTON = "com.anomo.bellevue.staging:id/btn_post_comment";
+	public static String CONTENT_COMMENT = "com.anomo.bellevue.staging:id/txt_content_post";
+	public static String LIKE_COMMENT_BUTTON = "com.anomo.bellevue.staging:id/textview_like_comment";
 
 	// Element Valid Value
 	public static String strUsername = "huskyguy@appzocial.com";
 	public static String strPassword = "tennis";
 	public static String strStatusPost = "Status Testing";
+	public static String strComment = "Comment Testing";
 
 	// Element Invalid Value
 	public static String strInvalidUsername = "abc@xyz.com";

@@ -40,11 +40,11 @@ public class SignInHelper {
 	}
 
 	public static void inputUsername(MobileElement txtUsername, String strUsername) throws Exception {
-		ApplicationHelper.enterValidCredential(txtUsername, strUsername);
+		ApplicationHelper.inputTextField(txtUsername, strUsername);
 	}
 
 	public static void inputPassword(MobileElement txtPassword, String strPassword) throws Exception {
-		ApplicationHelper.enterValidCredential(txtPassword, strPassword);
+		ApplicationHelper.inputTextField(txtPassword, strPassword);
 	}
 
 	public static void tapOnSignInButton(MobileElement btnSignIn) throws Exception {
@@ -56,7 +56,7 @@ public class SignInHelper {
 		inputUsername(getUsernameField(), ElementDeclaration.strUsername);
 		inputPassword(getPasswordField(), ElementDeclaration.strPassword);
 		ApplicationHelper.tapButton(getSignInButton());
-		System.out.println("Feed screen is displayed");
+		System.out.println("Sign in successfully");
 	}
 
 	public static void tapOnBackButton(MobileElement btnBack) throws Exception {

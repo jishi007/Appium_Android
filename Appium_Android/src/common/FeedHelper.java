@@ -93,7 +93,11 @@ public class FeedHelper {
 
 	public static MobileElement getSettingMenu() throws Exception {
 		return ApplicationHelper.getElement(ElementDeclaration.SETTING_LEFT_MENU);
-	}	
+	}
+	
+	public static MobileElement getUsernameLeftMenu() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.USERNAME_LEFT_MENU);
+	}
 	
 	public static MobileElement getFeedMenu() throws Exception {
 		return ApplicationHelper.getElement(ElementDeclaration.FEED_LEFT_MENU);
@@ -111,8 +115,36 @@ public class FeedHelper {
 		return ApplicationHelper.getElement(ElementDeclaration.CANCEL_SIGNOUT_BUTTON_SETTING);
 	}
 	
-	public static void openInputStatusPanel() throws Exception {
-		ApplicationHelper.tapButton(getPostLabel());
+	public static MobileElement getTakePhotoVideoButton() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.TAKE_PHOTO_VIDEO_BUTTON);
+	}
+	
+	public static MobileElement getChoosePhotoVideoButton() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.CHOOSE_PHOTO_VIDEO_BUTTON);
+	}
+	
+	public static MobileElement getCancelUploadButton() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.CANCEL_UPLOAD_PHOTO_VIDEO);
+	}
+	
+	public static MobileElement getTakePhotoVideoDeviceButton() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.TAKE_PHOTO_VIDEO_BUTTON_DEVICE);
+	}
+	
+	public static MobileElement getDoneTakePhotoVideoButton() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.TAKE_PHOTO_VIDEO_DONE_BUTTON_DEVICE);
+	}
+	
+	public static MobileElement getSavePhotoVideoButton() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.SAVE_PHOTO_VIDEO_BUTTON);
+	}
+	
+	public static MobileElement getTrimVideoDoneButton() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.TRIM_VIDEO_DONE_BUTTON);
+	}
+	
+	public static void openInputStatusPanel(MobileElement lbPost) throws Exception {
+		ApplicationHelper.tapButton(lbPost);
 		System.out.println("Open Input Status panel");
 	}
 
@@ -125,6 +157,16 @@ public class FeedHelper {
 		openLeftMenu();
 		ApplicationHelper.tapButton(getFeedMenu());
 		System.out.println("Open Feed screen");
+	}
+	
+	public static void tapOnFeedMenu(MobileElement btnFeedMenu) throws Exception {
+		ApplicationHelper.tapButton(btnFeedMenu);
+		System.out.println("Open Feed screen");
+	}
+	
+	public static void tapOnRecentTab(MobileElement btnRecentTab) throws Exception {
+		ApplicationHelper.tapButton(btnRecentTab);
+		System.out.println("Open Recent tab");
 	}
 
 	public static void openSettingScreen() throws Exception {
@@ -151,11 +193,43 @@ public class FeedHelper {
 		System.out.println("Log out successfully. Welcome screen is displayed");
 	}
 	
-	public static void inputContentStatus(MobileElement txtInputStatusField, String strStatusPost) throws Exception {
-		ApplicationHelper.enterValidCredential(txtInputStatusField, strStatusPost);
+	public static void inputContent(MobileElement txtInputStatusField, String strStatusPost) throws Exception {
+		ApplicationHelper.inputTextField(txtInputStatusField, strStatusPost);
 	}
 	
 	public static void tapOnPostButton(MobileElement btnPost) throws Exception {
 		ApplicationHelper.tapButton(btnPost);
+	}
+	
+	public static void tapOnLikeButton(MobileElement btnLike) throws Exception {
+		ApplicationHelper.tapButton(btnLike);
+		ApplicationHelper.WaitToDo(1);
+	}
+	
+	public static void tapOnCommentButton(MobileElement btnComment) throws Exception {
+		ApplicationHelper.tapButton(btnComment);
+		ApplicationHelper.WaitToDo(1);
+	}
+	
+	public static void takePhoto(MobileElement btnUploadPhoto) throws Exception {
+		ApplicationHelper.tapButton(btnUploadPhoto);
+		ApplicationHelper.tapButton(getTakePhotoVideoButton());
+		ApplicationHelper.tapButton(getTakePhotoVideoDeviceButton());
+		ApplicationHelper.WaitToDo(2);
+		ApplicationHelper.tapButton(getDoneTakePhotoVideoButton());
+		ApplicationHelper.tapButton(getSavePhotoVideoButton());
+		System.out.println("Take new photo");
+	}
+	
+	public static void recordVideo(MobileElement btnUploadVideo) throws Exception {
+		ApplicationHelper.tapButton(btnUploadVideo);
+		ApplicationHelper.tapButton(getTakePhotoVideoButton());
+		ApplicationHelper.tapButton(getTakePhotoVideoDeviceButton());
+		ApplicationHelper.WaitToDo(30);
+		ApplicationHelper.tapButton(getTakePhotoVideoDeviceButton());
+		ApplicationHelper.tapButton(getDoneTakePhotoVideoButton());
+		ApplicationHelper.tapButton(getTrimVideoDoneButton());
+		ApplicationHelper.WaitToDo(5);
+		System.out.println("Record new video");
 	}
 }

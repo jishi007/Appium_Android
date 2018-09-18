@@ -9,13 +9,13 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">4</td><td class="num">0</td><td class="num attn">3</td><td class="num">105,341</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">7</td><td class="num">0</td><td class="num attn">3</td><td class="num">122,981</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">screen.FeedScreen</td><td><a href="#m0">verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime</a></td><td rowspan="1">1536755598019</td><td rowspan="1">629</td></tr><tr class="failedeven"><td><a href="#m1">verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime</a></td><td rowspan="1">1536755587134</td><td rowspan="1">10873</td></tr><tr class="failedeven"><td><a href="#m2">verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain</a></td><td rowspan="1">1536755598655</td><td rowspan="1">3799</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">screen.FeedScreen</td><td><a href="#m3">createValidNewPostText</a></td><td rowspan="1">1536755618974</td><td rowspan="1">25995</td></tr><tr class="passedeven"><td><a href="#m4">verifyFeedScreenIsDisplayed</a></td><td rowspan="1">1536755586501</td><td rowspan="1">621</td></tr><tr class="passedeven"><td><a href="#m5">verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain</a></td><td rowspan="1">1536755602462</td><td rowspan="1">6320</td></tr><tr class="passedeven"><td><a href="#m6">verifyPostButtonIsDisableWWithEmptyContent</a></td><td rowspan="1">1536755608785</td><td rowspan="1">10184</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">screen.FeedScreen</td><td><a href="#m0">verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime</a></td><td rowspan="1">1537270043618</td><td rowspan="1">577</td></tr><tr class="failedeven"><td><a href="#m1">verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime</a></td><td rowspan="1">1537270033134</td><td rowspan="1">10478</td></tr><tr class="failedeven"><td><a href="#m2">verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain</a></td><td rowspan="1">1537270044204</td><td rowspan="1">3778</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="7">screen.FeedScreen</td><td><a href="#m3">commentPost</a></td><td rowspan="1">1537270081482</td><td rowspan="1">16111</td></tr><tr class="passedeven"><td><a href="#m4">likePost</a></td><td rowspan="1">1537270078226</td><td rowspan="1">1711</td></tr><tr class="passedeven"><td><a href="#m5">postStatus</a></td><td rowspan="1">1537270066907</td><td rowspan="1">11316</td></tr><tr class="passedeven"><td><a href="#m6">unLikePost</a></td><td rowspan="1">1537270079939</td><td rowspan="1">1538</td></tr><tr class="passedeven"><td><a href="#m7">verifyFeedScreenIsDisplayed</a></td><td rowspan="1">1537270032592</td><td rowspan="1">537</td></tr><tr class="passedeven"><td><a href="#m8">verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain</a></td><td rowspan="1">1537270047986</td><td rowspan="1">9690</td></tr><tr class="passedeven"><td><a href="#m9">verifyPostButtonIsDisableWWithEmptyContent</a></td><td rowspan="1">1537270057678</td><td rowspan="1">9225</td></tr></tbody>
 </table>
 <h2>Default test</h2><h3 id="m0">screen.FeedScreen#verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Exception: Error! Element not found!!!
-	at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:70)
-	at screen.FeedScreen$Screen.verifyBlackTipsPanelIsDisplayed(FeedScreen.java:212)
+	at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:136)
+	at screen.FeedScreen$Screen.verifyBlackTipsPanelIsDisplayed(FeedScreen.java:406)
 	at screen.FeedScreen.verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime(FeedScreen.java:68)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -43,13 +43,13 @@
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException
-	at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:68)
+	at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:133)
 	... 27 more
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m1">screen.FeedScreen#verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Exception: Error! Element not found!!!
-	at common.ApplicationHelper.getElement(ApplicationHelper.java:53)
+	at common.ApplicationHelper.getElement(ApplicationHelper.java:85)
 	at common.FeedHelper.getHintTipsPanel(FeedHelper.java:75)
-	at screen.FeedScreen$Screen.getElementsBlackTipsBox(FeedScreen.java:206)
+	at screen.FeedScreen$Screen.getElementsBlackTipsBox(FeedScreen.java:400)
 	at screen.FeedScreen.verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime(FeedScreen.java:59)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -82,7 +82,7 @@ Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &a
 System info: host: &apos;DESKTOP-1V9PIPH&apos;, ip: &apos;169.254.62.176&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;10&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {appActivity: com.anomo.uclasocial.Splash..., appPackage: com.anomo.bellevue.staging, databaseEnabled: false, desired: {appActivity: com.anomo.uclasocial.Splash..., appPackage: com.anomo.bellevue.staging, deviceName: Nexus 5, noReset: true, platformName: android, platformVersion: 6.0.1}, deviceManufacturer: LGE, deviceModel: Nexus 5, deviceName: 038c46ce0ac97606, deviceScreenSize: 1080x1920, deviceUDID: 038c46ce0ac97606, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noReset: true, platform: LINUX, platformName: Android, platformVersion: 6.0.1, takesScreenshot: true, warnings: {}, webStorageEnabled: false}
-Session ID: 6bdf8b25-7309-4701-8bd0-6cb31e69c7f1
+Session ID: bd5815b6-f78f-4e9e-a609-72c69d6d437f
 *** Element info: {Using=id, value=com.anomo.bellevue.staging:id/hint}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -105,13 +105,13 @@ Session ID: 6bdf8b25-7309-4701-8bd0-6cb31e69c7f1
 	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
 	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-	at common.ApplicationHelper.getElement(ApplicationHelper.java:51)
+	at common.ApplicationHelper.getElement(ApplicationHelper.java:82)
 	... 28 more
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m2">screen.FeedScreen#verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Exception: Error! This element is not enable!!!
-	at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:86)
-	at common.ApplicationHelper.tapButton(ApplicationHelper.java:109)
-	at screen.FeedScreen$Screen.checkedDontShowAgain(FeedScreen.java:202)
+	at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:154)
+	at common.ApplicationHelper.tapButton(ApplicationHelper.java:178)
+	at screen.FeedScreen$Screen.checkedDontShowAgain(FeedScreen.java:396)
 	at screen.FeedScreen.verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain(FeedScreen.java:74)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -139,12 +139,15 @@ Session ID: 6bdf8b25-7309-4701-8bd0-6cb31e69c7f1
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException
-	at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:84)
+	at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:151)
 	... 28 more
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">screen.FeedScreen#createValidNewPostText</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">screen.FeedScreen#verifyFeedScreenIsDisplayed</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">screen.FeedScreen#verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">screen.FeedScreen#verifyPostButtonIsDisableWWithEmptyContent</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">screen.FeedScreen#commentPost</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">screen.FeedScreen#likePost</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">screen.FeedScreen#postStatus</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">screen.FeedScreen#unLikePost</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">screen.FeedScreen#verifyFeedScreenIsDisplayed</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">screen.FeedScreen#verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">screen.FeedScreen#verifyPostButtonIsDisableWWithEmptyContent</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
