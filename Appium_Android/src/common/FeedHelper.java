@@ -143,9 +143,20 @@ public class FeedHelper {
 		return ApplicationHelper.getElement(ElementDeclaration.TRIM_VIDEO_DONE_BUTTON);
 	}
 	
-	public static void openInputStatusPanel(MobileElement lbPost) throws Exception {
-		ApplicationHelper.tapButton(lbPost);
+	public static void openInputStatusPanel() throws Exception {
+		ApplicationHelper.tapButton(getPostLabel());
 		System.out.println("Open Input Status panel");
+	}
+	
+	public static void checkDontShowAgain() throws Exception {
+		ApplicationHelper.tapButton(getCheckboxTips());
+		ApplicationHelper.WaitToDo(1);
+		System.out.println("Check Dont show again");
+	}
+	
+	public static void closeBlackTipsBox() throws Exception {
+		ApplicationHelper.tapButton(getCloseIcon());
+		System.out.println("Close Black Tips Box");
 	}
 
 	public static void openLeftMenu() throws Exception {
@@ -156,6 +167,7 @@ public class FeedHelper {
 	public static void openFeedScreen() throws Exception {
 		openLeftMenu();
 		ApplicationHelper.tapButton(getFeedMenu());
+		ApplicationHelper.WaitToDo(2);
 		System.out.println("Open Feed screen");
 	}
 	
@@ -164,8 +176,8 @@ public class FeedHelper {
 		System.out.println("Open Feed screen");
 	}
 	
-	public static void tapOnRecentTab(MobileElement btnRecentTab) throws Exception {
-		ApplicationHelper.tapButton(btnRecentTab);
+	public static void openRecentTab() throws Exception {
+		ApplicationHelper.tapButton(getRecentTab());
 		System.out.println("Open Recent tab");
 	}
 
@@ -203,7 +215,7 @@ public class FeedHelper {
 	
 	public static void tapOnLikeButton(MobileElement btnLike) throws Exception {
 		ApplicationHelper.tapButton(btnLike);
-		ApplicationHelper.WaitToDo(1);
+		ApplicationHelper.WaitToDo(2);
 	}
 	
 	public static void tapOnCommentButton(MobileElement btnComment) throws Exception {
@@ -214,6 +226,7 @@ public class FeedHelper {
 	public static void takePhoto(MobileElement btnUploadPhoto) throws Exception {
 		ApplicationHelper.tapButton(btnUploadPhoto);
 		ApplicationHelper.tapButton(getTakePhotoVideoButton());
+		ApplicationHelper.WaitToDo(1);
 		ApplicationHelper.tapButton(getTakePhotoVideoDeviceButton());
 		ApplicationHelper.WaitToDo(2);
 		ApplicationHelper.tapButton(getDoneTakePhotoVideoButton());
@@ -224,6 +237,7 @@ public class FeedHelper {
 	public static void recordVideo(MobileElement btnUploadVideo) throws Exception {
 		ApplicationHelper.tapButton(btnUploadVideo);
 		ApplicationHelper.tapButton(getTakePhotoVideoButton());
+		ApplicationHelper.WaitToDo(1);
 		ApplicationHelper.tapButton(getTakePhotoVideoDeviceButton());
 		ApplicationHelper.WaitToDo(30);
 		ApplicationHelper.tapButton(getTakePhotoVideoDeviceButton());

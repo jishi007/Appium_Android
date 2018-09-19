@@ -184,43 +184,19 @@ public class SignInScreen {
 			btnCancel = FeedHelper.getCancelLogOutButton();
 		}
 
-		public void checkSignInTitleIsDisplayed() throws Exception {
-			ApplicationHelper.checkElementIsDisplayed(lbSignInTitle);
-			System.out.println("Sign In title is displayed");
-		}
-
-		public void checkUsernameFieldIsDisplayed() throws Exception {
-			ApplicationHelper.checkElementIsDisplayed(txtUsername);
-			System.out.println("Username field is displayed");
-		}
-
-		public void checkPasswordFieldIsDisplayed() throws Exception {
-			ApplicationHelper.checkElementIsDisplayed(txtPassword);
-			System.out.println("Password field is displayed");
-		}
-
-		public void checkForgotPasswordButtonIsDisplayed() throws Exception {
-			ApplicationHelper.checkElementIsDisplayed(btnForgotPassword);
-			System.out.println("Forgot Password button is displayed");
-		}
-
-		public void checkSignInButtonIsDisplayed() throws Exception {
-			ApplicationHelper.checkElementIsDisplayed(btnSignIn);
-			System.out.println("Sign In button is displayed");
-		}
-
-		public void checkBackButtonIsDisplayed() throws Exception {
-			ApplicationHelper.checkElementIsDisplayed(btnBackToWelcomeScreen);
-			System.out.println("Back button is displayed");
-		}
-
 		public void verifyUISignInScreen() throws Exception {
-			checkSignInTitleIsDisplayed();
-			checkUsernameFieldIsDisplayed();
-			checkPasswordFieldIsDisplayed();
-			checkForgotPasswordButtonIsDisplayed();
-			checkSignInButtonIsDisplayed();
-			checkBackButtonIsDisplayed();
+			ApplicationHelper.checkElementIsDisplayed(SignInHelper.getSignInTitle());
+			System.out.println("Sign In title is displayed");
+			ApplicationHelper.checkElementIsDisplayed(SignInHelper.getUsernameField());
+			System.out.println("Username field is displayed");
+			ApplicationHelper.checkElementIsDisplayed(SignInHelper.getPasswordField());
+			System.out.println("Password field is displayed");
+			ApplicationHelper.checkElementIsDisplayed(SignInHelper.getForfotPasswordButton());
+			System.out.println("Forgot Password button is displayed");
+			ApplicationHelper.checkElementIsDisplayed(SignInHelper.getSignInButton());
+			System.out.println("Sign In button is displayed");
+			ApplicationHelper.checkElementIsDisplayed(SignInHelper.getBackButton());
+			System.out.println("Back button is displayed");
 			System.out.println("Verify Sign In screen is displayed!!!");
 		}
 

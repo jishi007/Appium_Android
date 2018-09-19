@@ -6,9 +6,9 @@
       <class name="screen.FeedScreen">
         <methods>
           <include name="setUpAfterMethod"/>
+          <include name="verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain"/>
           <include name="verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime"/>
           <include name="setUpBeforeTest"/>
-          <include name="verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain"/>
           <include name="setUpBeforeMethod"/>
           <include name="setUpAfterTest"/>
           <include name="verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime"/>

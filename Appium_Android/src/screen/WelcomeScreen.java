@@ -30,7 +30,6 @@ public class WelcomeScreen {
 	public void setUpBeforeTest() throws Exception {
 		// launch app
 		screen.launchApp();
-		screen.getElementsWelcomeScreen();
 	}
 
 	// The annotated method will be run after all the test methods belonging to the
@@ -84,55 +83,36 @@ public class WelcomeScreen {
 			ApplicationHelper.quitApp();
 		}
 
-		public void getElementsWelcomeScreen() throws Exception {
-			imgLogo = WelcomeHelper.getLogoImage();
-			btnSignIn = WelcomeHelper.getSignInButton();
-			btnRegister = WelcomeHelper.getRegisterButton();
-			System.out.println("Welcome screen is displayed");
-		}
-
-		public void getElementsSignInScreen() throws Exception {
-			lbSignInTitle = SignInHelper.getSignInTitle();
-			btnBackSignIn = SignInHelper.getBackButton();
-		}
-
-		public void getElementsRegisterScreen() throws Exception {
-			lbRegisterTitle = RegisterHelper.getRegisterTitle();
-			btnBackRegister = RegisterHelper.getBackButton();
-		}
-
 		public void verifyWelcomeScreenIsDisplayed() throws Exception {
-			ApplicationHelper.checkElementIsDisplayed(imgLogo);
+			ApplicationHelper.checkElementIsDisplayed(WelcomeHelper.getLogoImage());
 			System.out.println("Logo is displayed");
-			ApplicationHelper.checkElementIsDisplayed(btnSignIn);
+			ApplicationHelper.checkElementIsDisplayed(WelcomeHelper.getSignInButton());
 			System.out.println("Sign In button is displayed");
-			ApplicationHelper.checkElementIsDisplayed(btnRegister);
+			ApplicationHelper.checkElementIsDisplayed(WelcomeHelper.getRegisterButton());
 			System.out.println("Register button is displayed");
 			System.out.println("Verify Welcome screen is displayed!!!");
 		}
 
 		public void tapOnSignInButton() throws Exception {
-			WelcomeHelper.openSignInScreen(btnSignIn);
-			getElementsSignInScreen();
+			WelcomeHelper.openSignInScreen(WelcomeHelper.getSignInButton());
 		}
 
 		public void tapOnRegisterButton() throws Exception {
-			WelcomeHelper.openRegisterScreen(btnRegister);
-			getElementsRegisterScreen();
+			WelcomeHelper.openRegisterScreen(WelcomeHelper.getRegisterButton());
 		}
 
 		public void verifySigInScreenIsDisplayed() throws Exception {
-			ApplicationHelper.checkElementIsDisplayed(lbSignInTitle);
-			Assert.assertEquals("Sign In", lbSignInTitle.getText());
+			ApplicationHelper.checkElementIsDisplayed(SignInHelper.getSignInTitle());
+			Assert.assertEquals(SignInHelper.getSignInTitle().getText(), "Sign In");
 			System.out.println("Verify Sign In screen is displayed when tap on Sign In button!!!");
-			SignInHelper.tapOnBackButton(btnBackSignIn);
+			SignInHelper.tapOnBackButton(SignInHelper.getBackButton());
 		}
 
 		public void verifyRegisterScreenIsDisplayed() throws Exception {
-			ApplicationHelper.checkElementIsDisplayed(lbRegisterTitle);
-			Assert.assertEquals("Verification", lbRegisterTitle.getText());
+			ApplicationHelper.checkElementIsDisplayed(RegisterHelper.getRegisterTitle());
+			Assert.assertEquals(RegisterHelper.getRegisterTitle().getText(), "Verification");
 			System.out.println("Verify Register screen is displayed when tap on Register button!!!");
-			RegisterHelper.tapOnBackButton(btnBackRegister);
+			RegisterHelper.tapOnBackButton(RegisterHelper.getBackButton());
 		}
 	}
 }

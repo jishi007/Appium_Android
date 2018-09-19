@@ -56,6 +56,7 @@ public class SignInHelper {
 		inputUsername(getUsernameField(), ElementDeclaration.strUsername);
 		inputPassword(getPasswordField(), ElementDeclaration.strPassword);
 		ApplicationHelper.tapButton(getSignInButton());
+		ApplicationHelper.WaitToDo(2);
 		System.out.println("Sign in successfully");
 	}
 

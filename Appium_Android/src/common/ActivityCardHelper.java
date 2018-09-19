@@ -97,8 +97,8 @@ public class ActivityCardHelper {
 		System.out.println("Back to previous screen");
 	}
 	
-	public static void tapOnLikeComment(MobileElement btnLikeComment) throws Exception {
-		ApplicationHelper.tapButton(btnLikeComment);
-		System.out.println("Tap on Like comment" + btnLikeComment.getText());
+	public static void tapOnLikeComment() throws Exception {
+		ApplicationHelper.tapButton(getLikeCommentButton());
+		System.out.println("Tap on Like comment" + getLikeCommentButton().getText());
 	}
 }

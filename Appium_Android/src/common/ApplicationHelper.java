@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -77,22 +78,20 @@ public class ApplicationHelper {
 	}
 
 	// get element by ID
-	public static MobileElement getElement(String strElement) throws Exception {
+	public static MobileElement getElement(String strElement) throws NoSuchElementException {
 		try {
 			return driver.findElementById(strElement);
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new Exception("Error! Element not found!!!", e);
+		} catch (NoSuchElementException e) {
+			return null;
 		}
 	}
 
 	// get element by class
-	public static MobileElement getElementByClass(String strElement) throws Exception {
+	public static MobileElement getElementByClass(String strElement) throws NoSuchElementException {
 		try {
 			return driver.findElementByClassName(strElement);
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new Exception("Error! Element not found!!!", e);
+		} catch (NoSuchElementException e) {
+			return null;
 		}
 	}
 
@@ -188,7 +187,7 @@ public class ApplicationHelper {
 				.moveTo(PointOption.point(x, endY)).release().perform();
 
 	}
-	
+
 	public static void scrollUp() throws Exception {
 		int x = getCenterPointOfWidth();
 		int endY = (int) (getCenterPointOfHeight() * 0.80);

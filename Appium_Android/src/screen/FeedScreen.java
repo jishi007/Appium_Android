@@ -12,7 +12,6 @@ import common.ApplicationHelper;
 import common.ElementDeclaration;
 import common.FeedHelper;
 import common.SignInHelper;
-import io.appium.java_client.MobileElement;
 
 public class FeedScreen {
 	// The annotated method will be run before any test method belonging to the
@@ -50,56 +49,74 @@ public class FeedScreen {
 	// VERIFY UI FEED SCREEN
 	@Test(priority = 1)
 	public void verifyFeedScreenIsDisplayed() throws Exception {
+		
+		
 		screen.verifyUIFeedScreen();
 	}
 
 	@Test(priority = 2)
 	public void verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime() throws Exception {
-		screen.tapOnPostLabel();
-		screen.getElementsBlackTipsBox();
+		screen.openInputStatusPanel();
 
 		screen.verifyBlackTipsPanelIsDisplayed();
+
+		// Preparing the next Test
+		screen.closeBlackTipsBox();
+		screen.openFeedScreen();
+		screen.openRecentTab();
 	}
 
 	@Test(priority = 3)
 	public void verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime() throws Exception {
-		screen.tapOnPostLabel();
+		screen.openInputStatusPanel();
+		screen.closeBlackTipsBox();
+		screen.openFeedScreen();
+		screen.openInputStatusPanel();
 
 		screen.verifyBlackTipsPanelIsDisplayed();
+
+		// Preparing the next Test
+		screen.closeBlackTipsBox();
+		screen.openFeedScreen();
 	}
 
 	@Test(priority = 4)
-	public void verifyBlackTipsPanelNotDisplayedWhenCheckedDontShowAgain() throws Exception {
-		screen.tapOnPostLabel();
-		screen.checkedDontShowAgain();
-		screen.tapOnXIconToCloseBlackTipsPanel();
+	public void verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain() throws Exception {
+		screen.openInputStatusPanel();
+		screen.checkDontShowAgain();
+		screen.closeBlackTipsBox();
 		screen.openFeedScreen();
-		screen.tapOnPostLabel();
+		screen.openInputStatusPanel();
 
 		screen.verifyBlackTipsPanelNotDisplayedAnymore();
+
+		// Preparing the next Test
+		screen.openFeedScreen();
 	}
 
 	@Test(priority = 5)
 	public void verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain() throws Exception {
-		screen.tapOnPostLabel();
-		screen.getElementsInputStatusPanel();
+		screen.openInputStatusPanel();
 
 		screen.verifyInputStatusPanelIsDisplayed();
+
+		// Preparing the next Test
+		screen.openFeedScreen();
 	}
 
 	// VERIFY FUNCTIONAL SIGN IN SCREEN
 	// User should be able to sign in with valid credentials
 	@Test(priority = 6)
 	public void verifyPostButtonIsDisableWWithEmptyContent() throws Exception {
-		screen.tapOnPostLabel();
+		screen.openInputStatusPanel();
+		screen.verifyPostButtonIsDisable();
 		screen.inputContentStatus(ElementDeclaration.strInvalidStatusPost);
-
 		screen.verifyPostButtonIsDisable();
 	}
 
 	@Test(priority = 7)
 	public void postStatus() throws Exception {
-		screen.tapOnPostLabel();
+		screen.openInputStatusPanel();
 		screen.inputContentStatus(ElementDeclaration.strStatusPost);
 		screen.tapOnPostButton();
 
@@ -127,27 +144,30 @@ public class FeedScreen {
 		screen.tapOnPostCommentButton();
 
 		screen.verifyComment();
+
+		// Preparing the next Test
+		screen.backToProviousScreen();
 	}
 
-//	@Test(priority = 8)
-//	public void postPicture() throws Exception {
-//		screen.tapOnPostLabel();
-//		screen.inputContentStatus(ElementDeclaration.strStatusPost);
-//		screen.takePhoto();
-//		screen.tapOnPostButton();
-//
-//		screen.verifyPostPicture();
-//	}
-//	
-//	@Test(priority = 9)
-//	public void postVideo() throws Exception {
-//		screen.tapOnPostLabel();
-//		screen.inputContentStatus(ElementDeclaration.strStatusPost);
-//		screen.recordVideo();
-//		screen.tapOnPostButton();
-//
-//		screen.verifyPostVideo();
-//	}
+	@Test(priority = 11)
+	public void postPicture() throws Exception {
+		screen.openInputStatusPanel();
+		screen.inputContentStatus(ElementDeclaration.strStatusPost);
+		screen.takePhoto();
+		screen.tapOnPostButton();
+
+		screen.verifyPostPicture();
+	}
+	
+	@Test(priority = 12)
+	public void postVideo() throws Exception {
+		screen.openInputStatusPanel();
+		screen.inputContentStatus(ElementDeclaration.strStatusPost);
+		screen.recordVideo();
+		screen.tapOnPostButton();
+
+		screen.verifyPostVideo();
+	}
 
 	class Screen {
 		public void launchApp() throws Exception {
@@ -160,8 +180,7 @@ public class FeedScreen {
 
 		public void signIn() throws Exception {
 			SignInHelper.signIn();
-			getElementsLeftMenu();
-			getElementsFeedScreen();
+			getUsernameLogging();
 		}
 
 		public void logOut() throws Exception {
@@ -170,349 +189,199 @@ public class FeedScreen {
 
 		public void openFeedScreen() throws Exception {
 			FeedHelper.openFeedScreen();
-			tapOnRecentTab();
+		}
+
+		public void openRecentTab() throws Exception {
+			FeedHelper.openRecentTab();
+		}
+
+		public void closeBlackTipsBox() throws Exception {
+			FeedHelper.closeBlackTipsBox();
 		}
 
 		public void openLeftMenu() throws Exception {
 			FeedHelper.openLeftMenu();
 		}
 
-		public void tapOnRecentTab() throws Exception {
-			FeedHelper.tapOnRecentTab(btnRecentTab);
-		}
-
-		public void getElementsFeedScreen() throws Exception {
-			lbFeedTitle = FeedHelper.getFeedTitle();
-			iconLeftMenu = FeedHelper.getLeftMenuIcon();
-			// iconNumberNotification = FeedHelper.getNumberNotification();
-			iconChat = FeedHelper.getChatIcon();
-			// iconNumberConversation = FeedHelper.getNumberConversation();
-			btnPopularTab = FeedHelper.getPopularTab();
-			btnRecentTab = FeedHelper.getRecentTab();
-			btnFollowingTab = FeedHelper.getFollowingTab();
-			// btnSocialTab = FeedHelper.getSocialTab();
-			iconCamera = FeedHelper.getCameraIcon();
-			lbAddToConversation = FeedHelper.getHintAddToConversation();
-			lbPost = FeedHelper.getPostLabel();
-			System.out.println("Get elements Feed screen");
-		}
-
-		public void getElementsLeftMenu() throws Exception {
+		public void getUsernameLogging() throws Exception {
 			openLeftMenu();
-			lbUsernameLeftMenu = FeedHelper.getUsernameLeftMenu();
-			strUsername = lbUsernameLeftMenu.getText();
-			btnFeedMenu = FeedHelper.getFeedMenu();
-			System.out.println("Get elements Left menu");
-			FeedHelper.tapOnFeedMenu(btnFeedMenu);
+			strUsername = FeedHelper.getUsernameLeftMenu().getText();
+			System.out.println(strUsername);		
+			ApplicationHelper.tapButton(FeedHelper.getLeftMenuIcon());
 		}
 
 		public void verifyUIFeedScreen() throws Exception {
-			ApplicationHelper.checkElementIsDisplayed(lbFeedTitle);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getFeedTitle());
 			System.out.println("Feed title is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(iconLeftMenu);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getLeftMenuIcon());
 			System.out.println("Left menu icon is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(iconChat);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getChatIcon());
 			System.out.println("Chat icon is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(btnPopularTab);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getPopularTab());
 			System.out.println("Popular tab is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(btnRecentTab);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getRecentTab());
 			System.out.println("Recent tab is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(btnFollowingTab);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getFollowingTab());
 			System.out.println("Following tab is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(iconCamera);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getCameraIcon());
 			System.out.println("Camera icon is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(lbAddToConversation);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getHintAddToConversation());
 			System.out.println("Text 'Add To Conversation' is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(lbPost);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getPostLabel());
 			System.out.println("Post label is displayed!!!");
 			System.out.println("Verify Feed screen is displayed!!!");
 		}
 
-		public void getElementsActivityCardTypeText() throws Exception {
-			lbUsername = ActivityCardHelper.getUsernameDisplay();
-			lbDateTime = ActivityCardHelper.getDateTimeLable();
-			lbContentStatus = ActivityCardHelper.getContentStatus();
-			while (!ActivityCardHelper.getLikeButton().isDisplayed()) {
-				ApplicationHelper.scrollDown();
-				break;
-			}
-			btnComment = ActivityCardHelper.getCommentButton();
-			btnLike = ActivityCardHelper.getLikeButton();
-		}
-
-		public void getElementsCommentCard() throws Exception {
-			boolean isDisplayedContent = ActivityCardHelper.getContentComment().isDisplayed();
-			String strRighNow = ActivityCardHelper.getDateTimeComment().getText();
-			while (!isDisplayedContent && strDateTime == strRighNow) {
-				ApplicationHelper.scrollUp();
-				break;
-			}
-			lbUsernameComment = ActivityCardHelper.getUsernameComment();
-			lbDateTimeComment = ActivityCardHelper.getDateTimeComment();
-			lbContentComment = ActivityCardHelper.getContentComment();
-			btnLikeComment = ActivityCardHelper.getLikeCommentButton();
-			System.out.println("Get elements Comment card");
-		}
-
-		public void getElementsActivityCardTypeImage() throws Exception {
-			lbUsername = ActivityCardHelper.getUsernameDisplay();
-			lbContentStatus = ActivityCardHelper.getContentStatus();
-			imgPictureVideoPost = ActivityCardHelper.getPictureVideoPost();
-		}
-
-		public void getElementsActivityCardTypeVideo() throws Exception {
-			lbUsername = ActivityCardHelper.getUsernameDisplay();
-			lbContentStatus = ActivityCardHelper.getContentStatus();
-			imgPictureVideoPost = ActivityCardHelper.getPictureVideoPost();
-			iconPlayVideo = ActivityCardHelper.getPlayVideoIcon();
-		}
-
 		public void inputContentStatus(String strStatusPost) throws Exception {
-			FeedHelper.inputContent(txtStatusContent, strStatusPost);
+			FeedHelper.inputContent(FeedHelper.getInputStatusField(), strStatusPost);
 			System.out.println("Input content status: " + strStatusPost);
 		}
 
 		public void inputContentComment(String strComment) throws Exception {
-			FeedHelper.inputContent(txtComment, strComment);
+			FeedHelper.inputContent(ActivityCardHelper.getCommentInputField(), strComment);
 			System.out.println("Input content status: " + strComment);
 		}
 
 		public void takePhoto() throws Exception {
-			FeedHelper.takePhoto(btnUploadPhoto);
+			FeedHelper.takePhoto(FeedHelper.getUploadPhotoButton());
 		}
 
 		public void recordVideo() throws Exception {
-			FeedHelper.recordVideo(btnUploadVideo);
+			FeedHelper.recordVideo(FeedHelper.getUploadVideoButton());
 		}
 
 		public void tapOnPostButton() throws Exception {
-			FeedHelper.tapOnPostButton(btnPost);
+			FeedHelper.tapOnPostButton(FeedHelper.getPostButton());
 		}
 
 		public void verifyPostButtonIsDisable() throws Exception {
-			ApplicationHelper.checkElementIsDisable(btnPost);
+			ApplicationHelper.checkElementIsDisable(FeedHelper.getPostButton());
 			System.out.println("Post button is disable");
 		}
 
 		public void tapOnCommentButton() throws Exception {
-			FeedHelper.tapOnCommentButton(btnComment);
-			txtComment = ActivityCardHelper.getCommentInputField();
-			btnPostComment = ActivityCardHelper.getPostCommentButton();
+			FeedHelper.tapOnCommentButton(ActivityCardHelper.getCommentButton());
 		}
 
 		public void tapOnPostCommentButton() throws Exception {
-			FeedHelper.tapOnCommentButton(btnPostComment);
+			FeedHelper.tapOnCommentButton(ActivityCardHelper.getPostCommentButton());
 		}
 
 		public void verifyComment() throws Exception {
-			getElementsCommentCard();
-			btnBackFromActivityDetail = ActivityCardHelper.getBackButton();
-			Assert.assertEquals(lbUsernameComment.getText(), strUsername);
-			Assert.assertEquals(lbDateTimeComment.getText(), strDateTime);		
-			Assert.assertEquals(lbContentComment.getText(), ElementDeclaration.strComment);
+			while (ActivityCardHelper.getUsernameComment() != null
+					&& ActivityCardHelper.getDateTimeComment().getText() == strDateTime) {
+				ApplicationHelper.scrollUp();
+				break;
+			}
+			Assert.assertEquals(ActivityCardHelper.getUsernameComment().getText(), strUsername);
+			Assert.assertEquals(ActivityCardHelper.getDateTimeComment().getText(), strDateTime);
+			Assert.assertEquals(ActivityCardHelper.getContentComment().getText(), ElementDeclaration.strComment);
 			System.out.println("Comment status successfully");
-			ActivityCardHelper.tapOnLikeComment(btnLikeComment);
-			Assert.assertEquals(btnLikeComment.getText(), "Unlike");
+
+			while (ActivityCardHelper.getLikeCommentButton() != null) {
+				ApplicationHelper.scrollDown();
+				break;
+			}
+			ActivityCardHelper.tapOnLikeComment();
+			Assert.assertEquals(ActivityCardHelper.getLikeCommentButton().getText(), "Unlike");
 			System.out.println("Like comment successfully");
-			ActivityCardHelper.tapOnLikeComment(btnLikeComment);
-			Assert.assertEquals(btnLikeComment.getText(), "Like");
+			ActivityCardHelper.tapOnLikeComment();
+			Assert.assertEquals(ActivityCardHelper.getLikeCommentButton().getText(), "Like");
 			System.out.println("Unlike comment successfully");
-			ActivityCardHelper.tapOnBackButton(btnBackFromActivityDetail);
+		}
+
+		public void backToProviousScreen() throws Exception {
+			ActivityCardHelper.tapOnBackButton(ActivityCardHelper.getBackButton());
 		}
 
 		public void tapOnLikeButton() throws Exception {
-			FeedHelper.tapOnLikeButton(btnLike);
+			FeedHelper.tapOnLikeButton(ActivityCardHelper.getLikeButton());
 		}
 
 		public void verifyLikePost() throws Exception {
-			Assert.assertTrue(btnLike.isSelected());
+			Assert.assertTrue(ActivityCardHelper.getLikeButton().isSelected());
 			System.out.println("Like post successfully");
 		}
 
 		public void verifyUnLikePost() throws Exception {
-			Assert.assertFalse(btnLike.isSelected());
+			Assert.assertFalse(ActivityCardHelper.getLikeButton().isSelected());
 			System.out.println("Un-like post successfully");
 		}
 
 		public void verifyPostText() throws Exception {
-			getElementsActivityCardTypeText();
-			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(lbContentStatus, 10);
+			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(ActivityCardHelper.getContentStatus(), 3);
 			if (!isDisplay) {
-				Assert.assertEquals(ElementDeclaration.strStatusPost, lbContentStatus.getText());
-				Assert.assertEquals(strUsername, lbUsername.getText());
-				Assert.assertEquals(strDateTime, lbDateTime.getText());
+				Assert.assertEquals(ActivityCardHelper.getContentStatus().getText(), ElementDeclaration.strStatusPost);
+				Assert.assertEquals(ActivityCardHelper.getUsernameDisplay().getText(), strUsername);
+				Assert.assertEquals(ActivityCardHelper.getDateTimeLable().getText(), strDateTime);
 			}
 			System.out.println("Post status successfully");
 		}
 
 		public void verifyPostPicture() throws Exception {
-			getElementsActivityCardTypeImage();
-			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(lbUsername, 10);
-			if (!isDisplay) {
-				Assert.assertEquals(strUsername, lbUsername.getText());
-			}
-			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(lbContentStatus, 10);
-			if (!isDisplay) {
-				Assert.assertEquals(ElementDeclaration.strStatusPost, lbContentStatus.getText());
-			}
-			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(imgPictureVideoPost, 20);
-			if (!isDisplay) {
-				Assert.assertNotNull(imgPictureVideoPost);
+			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(ActivityCardHelper.getPictureVideoPost(), 10);
+			if (!isDisplay) {		
+				Assert.assertEquals(ActivityCardHelper.getContentStatus().getText(), ElementDeclaration.strStatusPost);
+				Assert.assertEquals(ActivityCardHelper.getUsernameDisplay().getText(), strUsername);
+				Assert.assertNotNull(ActivityCardHelper.getPictureVideoPost());
 			}
 			System.out.println("Post picture successfully");
 		}
 
 		public void verifyPostVideo() throws Exception {
-			getElementsActivityCardTypeVideo();
-			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(lbUsername, 10);
+			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(ActivityCardHelper.getPictureVideoPost(), 10);
 			if (!isDisplay) {
-				Assert.assertEquals(strUsername, lbUsername.getText());
+				Assert.assertEquals(ActivityCardHelper.getContentStatus().getText(), ElementDeclaration.strStatusPost);
+				Assert.assertEquals(ActivityCardHelper.getUsernameDisplay().getText(), strUsername);
+				Assert.assertNotNull(ActivityCardHelper.getPictureVideoPost());
+				Assert.assertNotNull(ActivityCardHelper.getPlayVideoIcon());
 			}
-			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(lbContentStatus, 10);
-			if (!isDisplay) {
-				Assert.assertEquals(ElementDeclaration.strStatusPost, lbContentStatus.getText());
-			}
-			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(imgPictureVideoPost, 20);
-			if (!isDisplay) {
-				Assert.assertNotNull(imgPictureVideoPost);
-			}
-			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(iconPlayVideo, 10);
-			if (!isDisplay) {
-				Assert.assertNotNull(iconPlayVideo);
-			}
-			System.out.println("Post picture successfully");
+			System.out.println("Post video successfully");
 		}
 
-		public void tapOnPostLabel() throws Exception {
-			FeedHelper.openInputStatusPanel(lbPost);
+		public void openInputStatusPanel() throws Exception {
+			FeedHelper.openInputStatusPanel();
 		}
 
-		public void tapOnXIconToCloseBlackTipsPanel() throws Exception {
-			ApplicationHelper.tapButton(iconClose);
-			getElementsInputStatusPanel();
-		}
-
-		public void checkedDontShowAgain() throws Exception {
-			ApplicationHelper.tapButton(checkboxTips);
-		}
-
-		public void getElementsBlackTipsBox() throws Exception {
-			lbHintTips = FeedHelper.getHintTipsPanel();
-			iconClose = FeedHelper.getCloseIcon();
-			checkboxTips = FeedHelper.getCheckboxTips();
+		public void checkDontShowAgain() throws Exception {
+			FeedHelper.checkDontShowAgain();
 		}
 
 		public void verifyBlackTipsPanelIsDisplayed() throws Exception {
-			ApplicationHelper.checkElementIsDisplayed(lbHintTips);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getHintTipsPanel());
 			System.out.println("Hint text is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(iconClose);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getCloseIcon());
 			System.out.println("X icon is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(checkboxTips);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getCheckboxTips());
 			System.out.println("Checkbox 'Dont show again' is displayed!!!");
 			System.out.println("Verify Black tips panel is displayed!!!");
-			tapOnXIconToCloseBlackTipsPanel();
-			openFeedScreen();
 		}
 
 		public void verifyBlackTipsPanelNotDisplayedAnymore() throws Exception {
-			ApplicationHelper.checkElementIsNotDisplayed(lbHintTips);
+			Assert.assertNull(FeedHelper.getHintTipsPanel());
 			System.out.println("Verify Black tips panel is not displayed anymore after checked Dont show again!!!");
-			openFeedScreen();
-		}
-
-		public void getElementsInputStatusPanel() throws Exception {
-			txtStatusContent = FeedHelper.getInputStatusField();
-			lbNumberCharacter = FeedHelper.getNumberOfCharacter();
-			btnPost = FeedHelper.getPostButton();
-			btnUploadPhoto = FeedHelper.getUploadPhotoButton();
-			btnUploadVideo = FeedHelper.getUploadVideoButton();
-			lbSelectGroup = FeedHelper.getSelectGroupLabel();
-			iconGlobal = FeedHelper.getGlobalImage();
 		}
 
 		public void verifyInputStatusPanelIsDisplayed() throws Exception {
-			ApplicationHelper.checkElementIsDisplayed(txtStatusContent);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getInputStatusField());
 			System.out.println("Input content field is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(lbNumberCharacter);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getNumberOfCharacter());
 			System.out.println("The number of limit character is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(btnPost);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getPostButton());
 			System.out.println("Post button is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(btnUploadPhoto);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getUploadPhotoButton());
 			System.out.println("Upload photo button is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(btnUploadVideo);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getUploadVideoButton());
 			System.out.println("Upload video button is displayed!!!");
-			ApplicationHelper.checkElementIsDisplayed(lbSelectGroup);
+			ApplicationHelper.checkElementIsDisplayed(FeedHelper.getSelectGroupLabel());
 			System.out.println("Select group box is displayed!!!");
 			System.out.println("Verify Input status field is displayed!!!");
-			openFeedScreen();
 		}
 	}
 
 	private Screen screen = new Screen();
 
-	// Feed screen
-	MobileElement lbFeedTitle;
-	MobileElement iconLeftMenu;
-	MobileElement iconNumberNotification;
-	MobileElement iconChat;
-	MobileElement iconNumberConversation;
-	MobileElement btnPopularTab;
-	MobileElement btnRecentTab;
-	MobileElement btnFollowingTab;
-	MobileElement btnSocialTab;
-	MobileElement iconCamera;
-	MobileElement lbAddToConversation;
-	MobileElement lbPost;
-	// Left menu
-	MobileElement lbUsernameLeftMenu;
-	MobileElement btnFeedMenu;
-	// Post content panel
-	MobileElement txtStatusContent;
-	MobileElement lbNumberCharacter;
-	MobileElement btnPost;
-	MobileElement btnUploadPhoto;
-	MobileElement btnUploadVideo;
-	// Upload Photo/ Video
-	MobileElement btnTakePhotoVideo;
-	MobileElement btnChoosePhotoVideo;
-	MobileElement btnCancelUpload;
-	MobileElement btnTakePhotoVideoDevice;
-	MobileElement btnDoneTakePhotoVideoDevice;
-	MobileElement btnSavePhotoVideo;
-	MobileElement btnTrimVideoDone;
-	// Select groups post
-	MobileElement iconGlobal;
-	MobileElement lbSelectGroup;
-	// Black tips panel
-	MobileElement lbHintTips;
-	MobileElement iconClose;
-	MobileElement checkboxTips;
-	// Activity Card
-	MobileElement btnBackFromActivityDetail;
-	MobileElement imgAvatar;
-	MobileElement lbUsername;
-	MobileElement lbAddress;
-	MobileElement iconOption;
-	MobileElement lbDateTime;
-	MobileElement lbContentStatus;
-	MobileElement imgPictureVideoPost;
-	MobileElement iconPlayVideo;
-	MobileElement lbTitleGroup;
-	MobileElement lbContentGroup;
-	MobileElement btnLike;
-	MobileElement lbNumberLike;
-	MobileElement btnComment;
-	MobileElement lbNumberComment;
-	// Comment card
-	MobileElement lbUsernameComment;
-	MobileElement lbDateTimeComment;
-	MobileElement txtComment;
-	MobileElement btnPostComment;
-	MobileElement btnLikeComment;
-	MobileElement lbContentComment;
-
 	String strUsername;
 	String strDateTime = "Right now";
-	String strComment;
 	boolean isDisplay = true;
 }
