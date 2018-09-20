@@ -1,5 +1,7 @@
 package common;
 
+import java.util.List;
+
 import io.appium.java_client.MobileElement;
 
 public class FeedHelper {
@@ -89,6 +91,38 @@ public class FeedHelper {
 
 	public static MobileElement getSelectGroupLabel() throws Exception {
 		return ApplicationHelper.getElement(ElementDeclaration.SELECT_GROUP_TEXT_VIEW_POST);
+	}
+	
+	public static MobileElement getGroupTypeLabel() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.GROUP_TYPE_LABEL);
+	}
+	
+	public static MobileElement getGroupTypeCheckIcon() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.GROUP_TYPE_CHECK_ICON);
+	}
+	
+	public static MobileElement getFeedTypeLabel() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.FEED_TYPE_LABEL);
+	}
+	
+	public static MobileElement getFeedTypeCheckIcon() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.FEED_TYPE_CHECK_ICON);
+	}
+	
+	public static MobileElement getCancelbutton() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.CANCEL_BUTTON);
+	}
+	
+	public static MobileElement getDoneButton() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.DONE_BUTTON);
+	}
+	
+	public static List<MobileElement> getListSpecificGroupsCheckIcon() throws Exception {
+		return ApplicationHelper.getListElements(ElementDeclaration.SPECIFIC_GROUP_CHECK_ICON);
+	}
+	
+	public static List<MobileElement> getListSpecificGroupsName() throws Exception {
+		return ApplicationHelper.getListElements(ElementDeclaration.SPECIFIC_GROUP_NAME);
 	}
 
 	public static MobileElement getSettingMenu() throws Exception {
@@ -223,10 +257,40 @@ public class FeedHelper {
 		ApplicationHelper.WaitToDo(1);
 	}
 	
+	public static void tapOnSelectGroupsBox(MobileElement selectGroupBox) throws Exception {
+		ApplicationHelper.tapButton(selectGroupBox);
+		ApplicationHelper.WaitToDo(1);
+	}
+	
+	public static void tapOnPostGroupType(MobileElement checkIcon) throws Exception {
+		ApplicationHelper.tapButton(checkIcon);
+		ApplicationHelper.WaitToDo(1);
+	}
+	
+	public static void tapOnPostFeedType(MobileElement checkIcon) throws Exception {
+		ApplicationHelper.tapButton(checkIcon);
+		ApplicationHelper.WaitToDo(1);
+	}
+	
+	public static void tapOnSpecificGroup(MobileElement checkIcon) throws Exception {
+		ApplicationHelper.tapButton(checkIcon);
+		ApplicationHelper.WaitToDo(1);
+	}
+	
+	public static void tapOnCancelButton(MobileElement btnCancel) throws Exception {
+		ApplicationHelper.tapButton(btnCancel);
+		ApplicationHelper.WaitToDo(1);
+	}
+	
+	public static void tapOnDoneButton(MobileElement btnDone) throws Exception {
+		ApplicationHelper.tapButton(btnDone);
+		ApplicationHelper.WaitToDo(1);
+	}
+	
 	public static void takePhoto(MobileElement btnUploadPhoto) throws Exception {
 		ApplicationHelper.tapButton(btnUploadPhoto);
 		ApplicationHelper.tapButton(getTakePhotoVideoButton());
-		ApplicationHelper.WaitToDo(1);
+		ApplicationHelper.WaitToDo(2);
 		ApplicationHelper.tapButton(getTakePhotoVideoDeviceButton());
 		ApplicationHelper.WaitToDo(2);
 		ApplicationHelper.tapButton(getDoneTakePhotoVideoButton());

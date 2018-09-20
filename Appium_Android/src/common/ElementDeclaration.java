@@ -70,19 +70,29 @@ public class ElementDeclaration {
 	// Select groups post
 	public static String GLOBAL_IMAGE_POST = "com.anomo.bellevue.staging:id/iv_feed";
 	public static String SELECT_GROUP_TEXT_VIEW_POST = "com.anomo.bellevue.staging:id/tv_select_group";
+	public static String TITLE_WHERE_TO_POST = "com.anomo.hrlf.staging:id/lbl_title";
+	public static String CANCEL_BUTTON = "com.anomo.hrlf.staging:id/btn_cancel";
+	public static String DONE_BUTTON = "com.anomo.hrlf.staging:id/btn_done";
+	public static String GROUP_TYPE_LABEL = "com.anomo.hrlf.staging:id/group_type";
+	public static String GROUP_TYPE_CHECK_ICON = "com.anomo.hrlf.staging:id/ic_group_check";
+	public static String FEED_TYPE_LABEL = "com.anomo.hrlf.staging:id/feed_type";
+	public static String FEED_TYPE_CHECK_ICON = "com.anomo.hrlf.staging:id/ic_feed_check";
+	// Specific group screen
+	public static String SPECIFIC_GROUP_NAME = "com.anomo.hrlf.staging:id/anomo_chk_title";
+	public static String SPECIFIC_GROUP_CHECK_ICON = "com.anomo.hrlf.staging:id/anomo_chk_title";
 	// Black tips panel
 	public static String HINT_TEXT_TIPS_PANEL = "com.anomo.bellevue.staging:id/hint";
 	public static String CLOSE_ICON_TIPS_PANEL = "com.anomo.bellevue.staging:id/close";
 	public static String CHECKBOX_TIPS_PANEL = "com.anomo.bellevue.staging:id/dont_show";
-	
-	//Upload Photo/ Video
+
+	// Upload Photo/ Video
 	public static String TAKE_PHOTO_VIDEO_BUTTON = "com.anomo.bellevue.staging:id/btn_take_photo";
 	public static String TAKE_PHOTO_VIDEO_BUTTON_DEVICE = "com.android.camera2:id/photo_video_button";
 	public static String TAKE_PHOTO_VIDEO_DONE_BUTTON_DEVICE = "com.android.camera2:id/done_button";
 	public static String TRIM_VIDEO_DONE_BUTTON = "com.anomo.bellevue.staging:id/button_done";
 	public static String SAVE_PHOTO_VIDEO_BUTTON = "com.anomo.bellevue.staging:id/button_save";
 	public static String CHOOSE_PHOTO_VIDEO_BUTTON = "com.anomo.bellevue.staging:id/btn_choose_photo";
-	public static String CANCEL_UPLOAD_PHOTO_VIDEO = "com.anomo.bellevue.staging:id/button_cancel_photo";	
+	public static String CANCEL_UPLOAD_PHOTO_VIDEO = "com.anomo.bellevue.staging:id/button_cancel_photo";
 
 	// Activity card
 	public static String BACK_BUTTON_DETAIL_AC = "com.anomo.bellevue.staging:id/button_back";
@@ -100,7 +110,7 @@ public class ElementDeclaration {
 	public static String NUMBER_OF_LIKE_AC = "com.anomo.bellevue.staging:id/textview_number_of_like";
 	public static String COMMENT_BUTTON_AC = "com.anomo.bellevue.staging:id/button_comment";
 	public static String NUMBER_OF_COMMENT_AC = "com.anomo.bellevue.staging:id/textview_number_of_comment";
-	
+
 	// Comment card
 	public static String DISPLAY_USERNAME_COMMENT = "com.anomo.bellevue.staging:id/textview_username";
 	public static String AVATAR_COMMENT = "com.anomo.bellevue.staging:id/ic_avatar";

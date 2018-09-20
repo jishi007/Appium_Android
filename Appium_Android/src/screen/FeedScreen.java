@@ -1,5 +1,7 @@
 package screen;
 
+import java.util.List;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -12,6 +14,7 @@ import common.ApplicationHelper;
 import common.ElementDeclaration;
 import common.FeedHelper;
 import common.SignInHelper;
+import io.appium.java_client.MobileElement;
 
 public class FeedScreen {
 	// The annotated method will be run before any test method belonging to the
@@ -49,8 +52,6 @@ public class FeedScreen {
 	// VERIFY UI FEED SCREEN
 	@Test(priority = 1)
 	public void verifyFeedScreenIsDisplayed() throws Exception {
-		
-		
 		screen.verifyUIFeedScreen();
 	}
 
@@ -158,7 +159,7 @@ public class FeedScreen {
 
 		screen.verifyPostPicture();
 	}
-	
+
 	@Test(priority = 12)
 	public void postVideo() throws Exception {
 		screen.openInputStatusPanel();
@@ -167,6 +168,18 @@ public class FeedScreen {
 		screen.tapOnPostButton();
 
 		screen.verifyPostVideo();
+	}
+
+	@Test(priority = 13)
+	public void postStatusToSpecificGroups() throws Exception {
+		screen.openInputStatusPanel();
+		screen.inputContentStatus(ElementDeclaration.strStatusPost);
+		screen.tapOnSelectGroupsBox();
+		screen.checkedPostToSpecificGroupType();
+		screen.selectListSpecificGroup();
+		screen.tapOnPostButton();
+
+		screen.verifyPostText();
 	}
 
 	class Screen {
@@ -206,7 +219,7 @@ public class FeedScreen {
 		public void getUsernameLogging() throws Exception {
 			openLeftMenu();
 			strUsername = FeedHelper.getUsernameLeftMenu().getText();
-			System.out.println(strUsername);		
+			System.out.println(strUsername);
 			ApplicationHelper.tapButton(FeedHelper.getLeftMenuIcon());
 		}
 
@@ -235,6 +248,28 @@ public class FeedScreen {
 		public void inputContentStatus(String strStatusPost) throws Exception {
 			FeedHelper.inputContent(FeedHelper.getInputStatusField(), strStatusPost);
 			System.out.println("Input content status: " + strStatusPost);
+		}
+
+		public void tapOnSelectGroupsBox() throws Exception {
+			FeedHelper.tapOnSelectGroupsBox(FeedHelper.getSelectGroupLabel());
+		}
+
+		public void checkedPostToSpecificGroupType() throws Exception {
+			FeedHelper.tapOnPostGroupType(FeedHelper.getGroupTypeCheckIcon());
+		}
+
+		public void selectListSpecificGroup() throws Exception {
+			listSpecificGroupCheckIcon = FeedHelper.getListSpecificGroupsCheckIcon();
+			listSpecificGroupName = FeedHelper.getListSpecificGroupsName();
+			if (listSpecificGroupCheckIcon.size() > 0) {
+				for (MobileElement element : listSpecificGroupCheckIcon) {
+					FeedHelper.tapOnSpecificGroup(element);
+				}
+				FeedHelper.tapOnDoneButton(FeedHelper.getDoneButton());
+			} else {
+				FeedHelper.tapOnCancelButton(FeedHelper.getCancelbutton());
+				System.out.println("This user does not join any groups!");
+			}
 		}
 
 		public void inputContentComment(String strComment) throws Exception {
@@ -320,7 +355,7 @@ public class FeedScreen {
 
 		public void verifyPostPicture() throws Exception {
 			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(ActivityCardHelper.getPictureVideoPost(), 10);
-			if (!isDisplay) {		
+			if (!isDisplay) {
 				Assert.assertEquals(ActivityCardHelper.getContentStatus().getText(), ElementDeclaration.strStatusPost);
 				Assert.assertEquals(ActivityCardHelper.getUsernameDisplay().getText(), strUsername);
 				Assert.assertNotNull(ActivityCardHelper.getPictureVideoPost());
@@ -384,4 +419,6 @@ public class FeedScreen {
 	String strUsername;
 	String strDateTime = "Right now";
 	boolean isDisplay = true;
+	List<MobileElement> listSpecificGroupCheckIcon;
+	List<MobileElement> listSpecificGroupName;
 }

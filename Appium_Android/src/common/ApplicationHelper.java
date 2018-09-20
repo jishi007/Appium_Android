@@ -2,6 +2,7 @@ package common;
 
 import java.net.URL;
 import java.time.Duration;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -85,6 +86,16 @@ public class ApplicationHelper {
 			return null;
 		}
 	}
+	
+	// get list element by ID
+		public static List<MobileElement> getListElements(String strElement) throws Exception {
+			try {
+				return driver.findElementsById(strElement);
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw new Exception("Error! Element not found!!!", e);
+			}
+		}
 
 	// get element by class
 	public static MobileElement getElementByClass(String strElement) throws NoSuchElementException {
