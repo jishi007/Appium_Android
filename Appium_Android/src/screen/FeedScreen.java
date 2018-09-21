@@ -252,18 +252,20 @@ public class FeedScreen {
 
 		public void tapOnSelectGroupsBox() throws Exception {
 			FeedHelper.tapOnSelectGroupsBox(FeedHelper.getSelectGroupLabel());
+			System.out.println("Select where to post...");
 		}
 
 		public void checkedPostToSpecificGroupType() throws Exception {
-			FeedHelper.tapOnPostGroupType(FeedHelper.getGroupTypeCheckIcon());
+			FeedHelper.tapOnPostGroupType(FeedHelper.getGroupTypeContainer());
+			System.out.println("Select specific groups...");
 		}
 
 		public void selectListSpecificGroup() throws Exception {
-			listSpecificGroupCheckIcon = FeedHelper.getListSpecificGroupsCheckIcon();
 			listSpecificGroupName = FeedHelper.getListSpecificGroupsName();
-			if (listSpecificGroupCheckIcon.size() > 0) {
-				for (MobileElement element : listSpecificGroupCheckIcon) {
+			if (listSpecificGroupName.size() > 0) {
+				for (MobileElement element : listSpecificGroupName) {
 					FeedHelper.tapOnSpecificGroup(element);
+					System.out.println("Select post into " + element.getText() + " group");
 				}
 				FeedHelper.tapOnDoneButton(FeedHelper.getDoneButton());
 			} else {
@@ -349,8 +351,12 @@ public class FeedScreen {
 				Assert.assertEquals(ActivityCardHelper.getContentStatus().getText(), ElementDeclaration.strStatusPost);
 				Assert.assertEquals(ActivityCardHelper.getUsernameDisplay().getText(), strUsername);
 				Assert.assertEquals(ActivityCardHelper.getDateTimeLable().getText(), strDateTime);
+				while (ActivityCardHelper.getTitleGroup() != null) {
+					ApplicationHelper.scrollDown();
+					break;
+				}
 			}
-			System.out.println("Post status successfully");
+			System.out.println("Post status successfully into " + ActivityCardHelper.getContentGroup().getText());
 		}
 
 		public void verifyPostPicture() throws Exception {
@@ -419,6 +425,5 @@ public class FeedScreen {
 	String strUsername;
 	String strDateTime = "Right now";
 	boolean isDisplay = true;
-	List<MobileElement> listSpecificGroupCheckIcon;
 	List<MobileElement> listSpecificGroupName;
 }

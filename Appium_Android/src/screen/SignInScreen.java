@@ -13,7 +13,6 @@ import common.FeedHelper;
 import common.ForgotPasswordHelper;
 import common.SignInHelper;
 import common.WelcomeHelper;
-import io.appium.java_client.MobileElement;
 
 public class SignInScreen {
 	// The annotated method will be run before any test method belonging to the

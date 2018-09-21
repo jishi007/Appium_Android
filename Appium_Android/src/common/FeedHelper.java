@@ -101,12 +101,20 @@ public class FeedHelper {
 		return ApplicationHelper.getElement(ElementDeclaration.GROUP_TYPE_CHECK_ICON);
 	}
 	
+	public static MobileElement getGroupTypeContainer() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.GROUP_TYPE_CONTAINER);
+	}
+	
 	public static MobileElement getFeedTypeLabel() throws Exception {
 		return ApplicationHelper.getElement(ElementDeclaration.FEED_TYPE_LABEL);
 	}
 	
 	public static MobileElement getFeedTypeCheckIcon() throws Exception {
 		return ApplicationHelper.getElement(ElementDeclaration.FEED_TYPE_CHECK_ICON);
+	}
+	
+	public static MobileElement getFeedTypeContainer() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.FEED_TYPE_CONTAINER);
 	}
 	
 	public static MobileElement getCancelbutton() throws Exception {
@@ -290,9 +298,9 @@ public class FeedHelper {
 	public static void takePhoto(MobileElement btnUploadPhoto) throws Exception {
 		ApplicationHelper.tapButton(btnUploadPhoto);
 		ApplicationHelper.tapButton(getTakePhotoVideoButton());
-		ApplicationHelper.WaitToDo(2);
+		ApplicationHelper.WaitToDo(5);
 		ApplicationHelper.tapButton(getTakePhotoVideoDeviceButton());
-		ApplicationHelper.WaitToDo(2);
+		ApplicationHelper.WaitToDo(5);
 		ApplicationHelper.tapButton(getDoneTakePhotoVideoButton());
 		ApplicationHelper.tapButton(getSavePhotoVideoButton());
 		System.out.println("Take new photo");

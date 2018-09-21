@@ -73,8 +73,10 @@ public class ElementDeclaration {
 	public static String TITLE_WHERE_TO_POST = "com.anomo.hrlf.staging:id/lbl_title";
 	public static String CANCEL_BUTTON = "com.anomo.hrlf.staging:id/btn_cancel";
 	public static String DONE_BUTTON = "com.anomo.hrlf.staging:id/btn_done";
+	public static String GROUP_TYPE_CONTAINER = "com.anomo.bellevue.staging:id/group_container";
 	public static String GROUP_TYPE_LABEL = "com.anomo.hrlf.staging:id/group_type";
 	public static String GROUP_TYPE_CHECK_ICON = "com.anomo.hrlf.staging:id/ic_group_check";
+	public static String FEED_TYPE_CONTAINER = "com.anomo.bellevue.staging:id/feed_container";
 	public static String FEED_TYPE_LABEL = "com.anomo.hrlf.staging:id/feed_type";
 	public static String FEED_TYPE_CHECK_ICON = "com.anomo.hrlf.staging:id/ic_feed_check";
 	// Specific group screen

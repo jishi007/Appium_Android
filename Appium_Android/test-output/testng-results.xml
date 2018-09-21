@@ -1,38 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="12" passed="9" failed="3" skipped="0">
+<testng-results ignored="0" total="13" passed="9" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-09-20T08:43:11Z" name="Default suite" finished-at="2018-09-20T08:47:35Z" duration-ms="263466">
+  <suite started-at="2018-09-21T11:08:12Z" name="Default suite" finished-at="2018-09-21T11:13:05Z" duration-ms="292646">
     <groups>
     </groups>
-    <test started-at="2018-09-20T08:43:11Z" name="Default test" finished-at="2018-09-20T08:47:35Z" duration-ms="263466">
+    <test started-at="2018-09-21T11:08:12Z" name="Default test" finished-at="2018-09-21T11:13:05Z" duration-ms="292646">
       <class name="screen.FeedScreen">
-        <test-method is-config="true" signature="setUpBeforeTest()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:43:11Z" name="setUpBeforeTest" finished-at="2018-09-20T08:43:57Z" duration-ms="45960" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeTest()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:08:12Z" name="setUpBeforeTest" finished-at="2018-09-21T11:08:56Z" duration-ms="43373" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeTest -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:43:57Z" name="setUpBeforeMethod" finished-at="2018-09-20T08:43:57Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:08:56Z" name="setUpBeforeMethod" finished-at="2018-09-21T11:08:56Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeMethod -->
-        <test-method signature="verifyFeedScreenIsDisplayed()[pri:1, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:43:57Z" name="verifyFeedScreenIsDisplayed" finished-at="2018-09-20T08:43:59Z" duration-ms="2103" status="PASS">
+        <test-method signature="verifyFeedScreenIsDisplayed()[pri:1, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:08:56Z" name="verifyFeedScreenIsDisplayed" finished-at="2018-09-21T11:08:58Z" duration-ms="1779" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFeedScreenIsDisplayed -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:43:59Z" name="setUpAfterMethod" finished-at="2018-09-20T08:43:59Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:08:58Z" name="setUpAfterMethod" finished-at="2018-09-21T11:08:58Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method signature="verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime()[pri:2, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:43:59Z" name="verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime" finished-at="2018-09-20T08:44:10Z" duration-ms="10478" status="FAIL">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:08:58Z" name="setUpBeforeMethod" finished-at="2018-09-21T11:08:58Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeMethod -->
+        <test-method signature="verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime()[pri:2, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:08:58Z" name="verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime" finished-at="2018-09-21T11:09:08Z" duration-ms="10629" status="FAIL">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Error! Element not found!!!]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Error! Element not found!!!
-at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:135)
-at screen.FeedScreen$Screen.verifyBlackTipsPanelIsDisplayed(FeedScreen.java:349)
-at screen.FeedScreen.verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime(FeedScreen.java:59)
+at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:146)
+at screen.FeedScreen$Screen.verifyBlackTipsPanelIsDisplayed(FeedScreen.java:392)
+at screen.FeedScreen.verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime(FeedScreen.java:62)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -59,7 +63,7 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException
-at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:132)
+at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:143)
 ... 27 more
 ]]>
             </full-stacktrace>
@@ -67,30 +71,26 @@ at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:132)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:43:59Z" name="setUpBeforeMethod" finished-at="2018-09-20T08:43:59Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpBeforeMethod -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:10Z" name="setUpAfterMethod" finished-at="2018-09-20T08:44:10Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:08Z" name="setUpAfterMethod" finished-at="2018-09-21T11:09:08Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:10Z" name="setUpBeforeMethod" finished-at="2018-09-20T08:44:10Z" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:08Z" name="setUpBeforeMethod" finished-at="2018-09-21T11:09:08Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeMethod -->
-        <test-method signature="verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime()[pri:3, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:10Z" name="verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime" finished-at="2018-09-20T08:44:20Z" duration-ms="10733" status="FAIL">
+        <test-method signature="verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime()[pri:3, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:08Z" name="verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime" finished-at="2018-09-21T11:09:20Z" duration-ms="11453" status="FAIL">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Error! This element is not enable!!!]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Error! This element is not enable!!!
-at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:153)
-at common.ApplicationHelper.tapButton(ApplicationHelper.java:177)
-at common.FeedHelper.closeBlackTipsBox(FeedHelper.java:158)
-at screen.FeedScreen$Screen.closeBlackTipsBox(FeedScreen.java:197)
-at screen.FeedScreen.verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime(FeedScreen.java:70)
+at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:164)
+at common.ApplicationHelper.tapButton(ApplicationHelper.java:188)
+at common.FeedHelper.closeBlackTipsBox(FeedHelper.java:200)
+at screen.FeedScreen$Screen.closeBlackTipsBox(FeedScreen.java:212)
+at screen.FeedScreen.verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime(FeedScreen.java:73)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -117,7 +117,7 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException
-at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:150)
+at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:161)
 ... 29 more
 ]]>
             </full-stacktrace>
@@ -125,26 +125,26 @@ at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:150)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:20Z" name="setUpAfterMethod" finished-at="2018-09-20T08:44:20Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:20Z" name="setUpAfterMethod" finished-at="2018-09-21T11:09:20Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:20Z" name="setUpBeforeMethod" finished-at="2018-09-20T08:44:20Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:20Z" name="setUpBeforeMethod" finished-at="2018-09-21T11:09:20Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeMethod -->
-        <test-method signature="verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain()[pri:4, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:20Z" name="verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain" finished-at="2018-09-20T08:44:34Z" duration-ms="13689" status="FAIL">
+        <test-method signature="verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain()[pri:4, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:20Z" name="verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain" finished-at="2018-09-21T11:09:33Z" duration-ms="13574" status="FAIL">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Error! This element is not enable!!!]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: Error! This element is not enable!!!
-at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:153)
-at common.ApplicationHelper.tapButton(ApplicationHelper.java:177)
-at common.FeedHelper.checkDontShowAgain(FeedHelper.java:152)
-at screen.FeedScreen$Screen.checkDontShowAgain(FeedScreen.java:345)
-at screen.FeedScreen.verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain(FeedScreen.java:84)
+at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:164)
+at common.ApplicationHelper.tapButton(ApplicationHelper.java:188)
+at common.FeedHelper.checkDontShowAgain(FeedHelper.java:194)
+at screen.FeedScreen$Screen.checkDontShowAgain(FeedScreen.java:388)
+at screen.FeedScreen.verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain(FeedScreen.java:87)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -171,7 +171,7 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException
-at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:150)
+at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:161)
 ... 29 more
 ]]>
             </full-stacktrace>
@@ -179,110 +179,206 @@ at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:150)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:34Z" name="setUpAfterMethod" finished-at="2018-09-20T08:44:34Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:33Z" name="setUpAfterMethod" finished-at="2018-09-21T11:09:33Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method signature="verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain()[pri:5, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:34Z" name="verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain" finished-at="2018-09-20T08:44:42Z" duration-ms="8084" status="PASS">
+        <test-method signature="verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain()[pri:5, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:33Z" name="verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain" finished-at="2018-09-21T11:09:41Z" duration-ms="8086" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:34Z" name="setUpBeforeMethod" finished-at="2018-09-20T08:44:34Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:33Z" name="setUpBeforeMethod" finished-at="2018-09-21T11:09:33Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeMethod -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:42Z" name="setUpBeforeMethod" finished-at="2018-09-20T08:44:42Z" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpBeforeMethod -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:42Z" name="setUpAfterMethod" finished-at="2018-09-20T08:44:42Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:41Z" name="setUpAfterMethod" finished-at="2018-09-21T11:09:41Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method signature="verifyPostButtonIsDisableWWithEmptyContent()[pri:6, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:42Z" name="verifyPostButtonIsDisableWWithEmptyContent" finished-at="2018-09-20T08:44:52Z" duration-ms="10075" status="PASS">
+        <test-method signature="verifyPostButtonIsDisableWWithEmptyContent()[pri:6, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:41Z" name="verifyPostButtonIsDisableWWithEmptyContent" finished-at="2018-09-21T11:09:52Z" duration-ms="10262" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyPostButtonIsDisableWWithEmptyContent -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:52Z" name="setUpAfterMethod" finished-at="2018-09-20T08:44:52Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:41Z" name="setUpBeforeMethod" finished-at="2018-09-21T11:09:41Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeMethod -->
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:52Z" name="setUpAfterMethod" finished-at="2018-09-21T11:09:52Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method signature="postStatus()[pri:7, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:52Z" name="postStatus" finished-at="2018-09-20T08:45:20Z" duration-ms="27225" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:52Z" name="setUpBeforeMethod" finished-at="2018-09-21T11:09:52Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeMethod -->
+        <test-method signature="postStatus()[pri:7, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:09:52Z" name="postStatus" finished-at="2018-09-21T11:10:19Z" duration-ms="27360" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postStatus -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:44:52Z" name="setUpBeforeMethod" finished-at="2018-09-20T08:44:52Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpBeforeMethod -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:45:20Z" name="setUpAfterMethod" finished-at="2018-09-20T08:45:20Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:10:19Z" name="setUpAfterMethod" finished-at="2018-09-21T11:10:19Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:45:20Z" name="setUpBeforeMethod" finished-at="2018-09-20T08:45:20Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpBeforeMethod -->
-        <test-method signature="likePost()[pri:8, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:45:20Z" name="likePost" finished-at="2018-09-20T08:45:22Z" duration-ms="2667" status="PASS">
+        <test-method signature="likePost()[pri:8, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:10:19Z" name="likePost" finished-at="2018-09-21T11:10:21Z" duration-ms="2506" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- likePost -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:45:22Z" name="setUpAfterMethod" finished-at="2018-09-20T08:45:22Z" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpAfterMethod -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:45:22Z" name="setUpBeforeMethod" finished-at="2018-09-20T08:45:22Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:10:19Z" name="setUpBeforeMethod" finished-at="2018-09-21T11:10:19Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeMethod -->
-        <test-method signature="unLikePost()[pri:9, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:45:22Z" name="unLikePost" finished-at="2018-09-20T08:45:25Z" duration-ms="2501" status="PASS">
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:10:21Z" name="setUpAfterMethod" finished-at="2018-09-21T11:10:21Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpAfterMethod -->
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:10:21Z" name="setUpBeforeMethod" finished-at="2018-09-21T11:10:21Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeMethod -->
+        <test-method signature="unLikePost()[pri:9, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:10:21Z" name="unLikePost" finished-at="2018-09-21T11:10:24Z" duration-ms="2471" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- unLikePost -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:45:25Z" name="setUpAfterMethod" finished-at="2018-09-20T08:45:25Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:10:24Z" name="setUpAfterMethod" finished-at="2018-09-21T11:10:24Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:45:25Z" name="setUpBeforeMethod" finished-at="2018-09-20T08:45:25Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpBeforeMethod -->
-        <test-method signature="commentPost()[pri:10, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:45:25Z" name="commentPost" finished-at="2018-09-20T08:45:41Z" duration-ms="16318" status="PASS">
+        <test-method signature="commentPost()[pri:10, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:10:24Z" name="commentPost" finished-at="2018-09-21T11:10:41Z" duration-ms="16888" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- commentPost -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:45:41Z" name="setUpAfterMethod" finished-at="2018-09-20T08:45:41Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:10:24Z" name="setUpBeforeMethod" finished-at="2018-09-21T11:10:24Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeMethod -->
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:10:41Z" name="setUpAfterMethod" finished-at="2018-09-21T11:10:41Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method signature="postPicture()[pri:11, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:45:41Z" name="postPicture" finished-at="2018-09-20T08:46:07Z" duration-ms="25701" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:10:41Z" name="setUpBeforeMethod" finished-at="2018-09-21T11:10:41Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeMethod -->
+        <test-method signature="postPicture()[pri:11, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:10:41Z" name="postPicture" finished-at="2018-09-21T11:11:10Z" duration-ms="29143" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postPicture -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:45:41Z" name="setUpBeforeMethod" finished-at="2018-09-20T08:45:41Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:11:10Z" name="setUpBeforeMethod" finished-at="2018-09-21T11:11:10Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeMethod -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:46:07Z" name="setUpAfterMethod" finished-at="2018-09-20T08:46:07Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:11:10Z" name="setUpAfterMethod" finished-at="2018-09-21T11:11:10Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method signature="postVideo()[pri:12, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:46:07Z" name="postVideo" finished-at="2018-09-20T08:47:23Z" duration-ms="75901" status="PASS">
+        <test-method signature="postVideo()[pri:12, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:11:10Z" name="postVideo" finished-at="2018-09-21T11:12:22Z" duration-ms="72092" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postVideo -->
-        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:46:07Z" name="setUpBeforeMethod" finished-at="2018-09-20T08:46:07Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpBeforeMethod -->
-        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:47:23Z" name="setUpAfterMethod" finished-at="2018-09-20T08:47:23Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:12:22Z" name="setUpAfterMethod" finished-at="2018-09-21T11:12:22Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterMethod -->
-        <test-method is-config="true" signature="setUpAfterTest()[pri:0, instance:screen.FeedScreen@3af9c5b7]" started-at="2018-09-20T08:47:23Z" name="setUpAfterTest" finished-at="2018-09-20T08:47:35Z" duration-ms="11959" status="PASS">
+        <test-method signature="postStatusToSpecificGroups()[pri:13, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:12:22Z" name="postStatusToSpecificGroups" finished-at="2018-09-21T11:12:55Z" duration-ms="32636" status="FAIL">
+          <exception class="java.lang.Exception">
+            <message>
+              <![CDATA[Error! This element is not enable!!!]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Exception: Error! This element is not enable!!!
+at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:164)
+at common.ApplicationHelper.tapButton(ApplicationHelper.java:188)
+at common.FeedHelper.tapOnCancelButton(FeedHelper.java:289)
+at screen.FeedScreen$Screen.selectListSpecificGroup(FeedScreen.java:272)
+at screen.FeedScreen.postStatusToSpecificGroups(FeedScreen.java:179)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.NullPointerException
+at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:161)
+... 29 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Exception -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postStatusToSpecificGroups -->
+        <test-method is-config="true" signature="setUpBeforeMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:12:22Z" name="setUpBeforeMethod" finished-at="2018-09-21T11:12:22Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeMethod -->
+        <test-method is-config="true" signature="setUpAfterTest()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:12:55Z" name="setUpAfterTest" finished-at="2018-09-21T11:13:05Z" duration-ms="10312" status="FAIL">
+          <exception class="java.lang.Exception">
+            <message>
+              <![CDATA[Error! This element is not enable!!!]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Exception: Error! This element is not enable!!!
+at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:164)
+at common.ApplicationHelper.tapButton(ApplicationHelper.java:188)
+at common.FeedHelper.openLeftMenu(FeedHelper.java:205)
+at common.FeedHelper.logOut(FeedHelper.java:238)
+at screen.FeedScreen$Screen.logOut(FeedScreen.java:200)
+at screen.FeedScreen.setUpAfterTest(FeedScreen.java:34)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+at org.testng.TestRunner.afterRun(TestRunner.java:725)
+at org.testng.TestRunner.run(TestRunner.java:509)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.NullPointerException
+at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:161)
+... 29 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Exception -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAfterTest -->
+        <test-method is-config="true" signature="setUpAfterMethod()[pri:0, instance:screen.FeedScreen@37271612]" started-at="2018-09-21T11:12:55Z" name="setUpAfterMethod" finished-at="2018-09-21T11:12:55Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpAfterMethod -->
       </class> <!-- screen.FeedScreen -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

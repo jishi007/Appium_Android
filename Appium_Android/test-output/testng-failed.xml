@@ -10,6 +10,7 @@
           <include name="verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime"/>
           <include name="setUpBeforeTest"/>
           <include name="setUpBeforeMethod"/>
+          <include name="postStatusToSpecificGroups"/>
           <include name="setUpAfterTest"/>
           <include name="verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime"/>
         </methods>

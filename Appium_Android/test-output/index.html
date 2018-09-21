@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Khoi Phan\AppData\Local\Temp\testng-eclipse--816962997\testng-customsuite.xml</span>
+                    <span>C:\Users\Khoi Phan\AppData\Local\Temp\testng-eclipse-2035029534\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">12 methods, 3 failed,   9 passed</span>
+                    <span class="method-stats">13 methods, 4 failed,   9 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -100,6 +100,11 @@
                       <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
                     <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="screen.FeedScreen" class="method navigator-link" hash-for-method="postStatusToSpecificGroups">postStatusToSpecificGroups</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="screen.FeedScreen" class="method navigator-link" hash-for-method="verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime">verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime</a> <!-- method navigator-link -->
@@ -189,15 +194,15 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime">
-                  </a> <!-- verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime -->
-                  <span class="method-name">verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime</span>
+                  <a name="postStatusToSpecificGroups">
+                  </a> <!-- postStatusToSpecificGroups -->
+                  <span class="method-name">postStatusToSpecificGroups</span>
                   <div class="stack-trace">java.lang.Exception: Error! This element is not enable!!!
-	at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:153)
-	at common.ApplicationHelper.tapButton(ApplicationHelper.java:177)
-	at common.FeedHelper.closeBlackTipsBox(FeedHelper.java:158)
-	at screen.FeedScreen$Screen.closeBlackTipsBox(FeedScreen.java:197)
-	at screen.FeedScreen.verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime(FeedScreen.java:70)
+	at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:164)
+	at common.ApplicationHelper.tapButton(ApplicationHelper.java:188)
+	at common.FeedHelper.tapOnCancelButton(FeedHelper.java:289)
+	at screen.FeedScreen$Screen.selectListSpecificGroup(FeedScreen.java:272)
+	at screen.FeedScreen.postStatusToSpecificGroups(FeedScreen.java:179)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -224,7 +229,50 @@
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException
-	at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:150)
+	at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:161)
+	... 29 more
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime">
+                  </a> <!-- verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime -->
+                  <span class="method-name">verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime</span>
+                  <div class="stack-trace">java.lang.Exception: Error! This element is not enable!!!
+	at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:164)
+	at common.ApplicationHelper.tapButton(ApplicationHelper.java:188)
+	at common.FeedHelper.closeBlackTipsBox(FeedHelper.java:200)
+	at screen.FeedScreen$Screen.closeBlackTipsBox(FeedScreen.java:212)
+	at screen.FeedScreen.verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime(FeedScreen.java:73)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.NullPointerException
+	at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:161)
 	... 29 more
 
 </div> <!-- stack-trace -->
@@ -236,9 +284,9 @@ Caused by: java.lang.NullPointerException
                   </a> <!-- verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime -->
                   <span class="method-name">verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime</span>
                   <div class="stack-trace">java.lang.Exception: Error! Element not found!!!
-	at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:135)
-	at screen.FeedScreen$Screen.verifyBlackTipsPanelIsDisplayed(FeedScreen.java:349)
-	at screen.FeedScreen.verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime(FeedScreen.java:59)
+	at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:146)
+	at screen.FeedScreen$Screen.verifyBlackTipsPanelIsDisplayed(FeedScreen.java:392)
+	at screen.FeedScreen.verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime(FeedScreen.java:62)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -265,7 +313,7 @@ Caused by: java.lang.NullPointerException
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException
-	at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:132)
+	at common.ApplicationHelper.checkElementIsDisplayed(ApplicationHelper.java:143)
 	... 27 more
 
 </div> <!-- stack-trace -->
@@ -277,11 +325,11 @@ Caused by: java.lang.NullPointerException
                   </a> <!-- verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain -->
                   <span class="method-name">verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain</span>
                   <div class="stack-trace">java.lang.Exception: Error! This element is not enable!!!
-	at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:153)
-	at common.ApplicationHelper.tapButton(ApplicationHelper.java:177)
-	at common.FeedHelper.checkDontShowAgain(FeedHelper.java:152)
-	at screen.FeedScreen$Screen.checkDontShowAgain(FeedScreen.java:345)
-	at screen.FeedScreen.verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain(FeedScreen.java:84)
+	at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:164)
+	at common.ApplicationHelper.tapButton(ApplicationHelper.java:188)
+	at common.FeedHelper.checkDontShowAgain(FeedHelper.java:194)
+	at screen.FeedScreen$Screen.checkDontShowAgain(FeedScreen.java:388)
+	at screen.FeedScreen.verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain(FeedScreen.java:87)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -308,7 +356,7 @@ Caused by: java.lang.NullPointerException
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException
-	at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:150)
+	at common.ApplicationHelper.checkElementIsEnable(ApplicationHelper.java:161)
 	... 29 more
 
 </div> <!-- stack-trace -->
@@ -390,7 +438,7 @@ Caused by: java.lang.NullPointerException
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Khoi Phan\AppData\Local\Temp\testng-eclipse--816962997\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Khoi Phan\AppData\Local\Temp\testng-eclipse-2035029534\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -439,55 +487,59 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(12);
+data.addRows(13);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'postVideo')
 data.setCell(0, 2, 'screen.FeedScreen')
-data.setCell(0, 3, 75901);
+data.setCell(0, 3, 72092);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'postStatus')
+data.setCell(1, 1, 'postStatusToSpecificGroups')
 data.setCell(1, 2, 'screen.FeedScreen')
-data.setCell(1, 3, 27225);
+data.setCell(1, 3, 32636);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'postPicture')
 data.setCell(2, 2, 'screen.FeedScreen')
-data.setCell(2, 3, 25701);
+data.setCell(2, 3, 29143);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'commentPost')
+data.setCell(3, 1, 'postStatus')
 data.setCell(3, 2, 'screen.FeedScreen')
-data.setCell(3, 3, 16318);
+data.setCell(3, 3, 27360);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain')
+data.setCell(4, 1, 'commentPost')
 data.setCell(4, 2, 'screen.FeedScreen')
-data.setCell(4, 3, 13689);
+data.setCell(4, 3, 16888);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime')
+data.setCell(5, 1, 'verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain')
 data.setCell(5, 2, 'screen.FeedScreen')
-data.setCell(5, 3, 10733);
+data.setCell(5, 3, 13574);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime')
+data.setCell(6, 1, 'verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime')
 data.setCell(6, 2, 'screen.FeedScreen')
-data.setCell(6, 3, 10478);
+data.setCell(6, 3, 11453);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'verifyPostButtonIsDisableWWithEmptyContent')
+data.setCell(7, 1, 'verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime')
 data.setCell(7, 2, 'screen.FeedScreen')
-data.setCell(7, 3, 10075);
+data.setCell(7, 3, 10629);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain')
+data.setCell(8, 1, 'verifyPostButtonIsDisableWWithEmptyContent')
 data.setCell(8, 2, 'screen.FeedScreen')
-data.setCell(8, 3, 8084);
+data.setCell(8, 3, 10262);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'likePost')
+data.setCell(9, 1, 'verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain')
 data.setCell(9, 2, 'screen.FeedScreen')
-data.setCell(9, 3, 2667);
+data.setCell(9, 3, 8086);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'unLikePost')
+data.setCell(10, 1, 'likePost')
 data.setCell(10, 2, 'screen.FeedScreen')
-data.setCell(10, 3, 2501);
+data.setCell(10, 3, 2506);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'verifyFeedScreenIsDisplayed')
+data.setCell(11, 1, 'unLikePost')
 data.setCell(11, 2, 'screen.FeedScreen')
-data.setCell(11, 3, 2103);
+data.setCell(11, 3, 2471);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'verifyFeedScreenIsDisplayed')
+data.setCell(12, 2, 'screen.FeedScreen')
+data.setCell(12, 3, 1779);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -525,157 +577,173 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
                 <span class="method-name">setUpBeforeMethod</span>
-                <span class="method-start">45982 ms</span>
+                <span class="method-start">43390 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyFeedScreenIsDisplayed</span>
-                <span class="method-start">45982 ms</span>
+                <span class="method-start">43390 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">setUpAfterMethod</span>
-                <span class="method-start">48087 ms</span>
+                <span class="method-start">45171 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpBeforeMethod</span>
-                <span class="method-start">48090 ms</span>
+                <span class="method-start">45174 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime</span>
-                <span class="method-start">48090 ms</span>
+                <span class="method-start">45175 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">setUpAfterMethod</span>
-                <span class="method-start">58572 ms</span>
+                <span class="method-start">55808 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpBeforeMethod</span>
-                <span class="method-start">58573 ms</span>
+                <span class="method-start">55817 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime</span>
-                <span class="method-start">58577 ms</span>
+                <span class="method-start">55818 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">setUpAfterMethod</span>
-                <span class="method-start">69316 ms</span>
+                <span class="method-start">67277 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpBeforeMethod</span>
-                <span class="method-start">69317 ms</span>
+                <span class="method-start">67279 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain</span>
-                <span class="method-start">69317 ms</span>
+                <span class="method-start">67280 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">setUpAfterMethod</span>
-                <span class="method-start">83008 ms</span>
+                <span class="method-start">80857 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpBeforeMethod</span>
-                <span class="method-start">83009 ms</span>
+                <span class="method-start">80858 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain</span>
-                <span class="method-start">83009 ms</span>
+                <span class="method-start">80858 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">setUpAfterMethod</span>
-                <span class="method-start">91095 ms</span>
+                <span class="method-start">88946 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpBeforeMethod</span>
-                <span class="method-start">91095 ms</span>
+                <span class="method-start">88947 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyPostButtonIsDisableWWithEmptyContent</span>
-                <span class="method-start">91096 ms</span>
+                <span class="method-start">88947 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">setUpAfterMethod</span>
-                <span class="method-start">101173 ms</span>
+                <span class="method-start">99212 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpBeforeMethod</span>
-                <span class="method-start">101174 ms</span>
+                <span class="method-start">99214 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">postStatus</span>
-                <span class="method-start">101174 ms</span>
+                <span class="method-start">99215 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">setUpAfterMethod</span>
-                <span class="method-start">128401 ms</span>
+                <span class="method-start">126576 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpBeforeMethod</span>
-                <span class="method-start">128402 ms</span>
+                <span class="method-start">126577 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">likePost</span>
-                <span class="method-start">128403 ms</span>
+                <span class="method-start">126577 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">setUpAfterMethod</span>
-                <span class="method-start">131071 ms</span>
+                <span class="method-start">129086 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpBeforeMethod</span>
-                <span class="method-start">131072 ms</span>
+                <span class="method-start">129087 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">unLikePost</span>
-                <span class="method-start">131073 ms</span>
+                <span class="method-start">129088 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">setUpAfterMethod</span>
-                <span class="method-start">133576 ms</span>
+                <span class="method-start">131560 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpBeforeMethod</span>
-                <span class="method-start">133576 ms</span>
+                <span class="method-start">131561 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">commentPost</span>
-                <span class="method-start">133577 ms</span>
+                <span class="method-start">131561 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">setUpAfterMethod</span>
-                <span class="method-start">149897 ms</span>
+                <span class="method-start">148451 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpBeforeMethod</span>
-                <span class="method-start">149898 ms</span>
+                <span class="method-start">148452 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">postPicture</span>
-                <span class="method-start">149898 ms</span>
+                <span class="method-start">148452 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">setUpAfterMethod</span>
-                <span class="method-start">175600 ms</span>
+                <span class="method-start">177596 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpBeforeMethod</span>
-                <span class="method-start">175601 ms</span>
+                <span class="method-start">177596 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">postVideo</span>
-                <span class="method-start">175601 ms</span>
+                <span class="method-start">177597 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">setUpAfterMethod</span>
-                <span class="method-start">251503 ms</span>
+                <span class="method-start">249691 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUpBeforeMethod</span>
+                <span class="method-start">249692 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">postStatusToSpecificGroups</span>
+                <span class="method-start">249692 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">setUpAfterMethod</span>
+                <span class="method-start">282330 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">setUpAfterTest</span>
-                <span class="method-start">251504 ms</span>
+                <span class="method-start">282330 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
