@@ -2,9 +2,15 @@ package common;
 
 public class ElementDeclaration {
 	// Device Info
-	public static String deviceName = "Nexus 5";
+//	public static String deviceName = "Nexus 5";
+//	public static String platformName = "Android";
+//	public static String platformVersion = "6.0.1";
+	
+	public static String deviceName = "SM-G930P";
 	public static String platformName = "Android";
-	public static String platformVersion = "6.0.1";
+	public static String platformVersion = "7.0";
+	
+	// App Info
 	public static String appPackage = "com.anomo.bellevue.staging";
 	public static String appActivity = "com.anomo.uclasocial.SplashScreen";
 
@@ -70,18 +76,19 @@ public class ElementDeclaration {
 	// Select groups post
 	public static String GLOBAL_IMAGE_POST = "com.anomo.bellevue.staging:id/iv_feed";
 	public static String SELECT_GROUP_TEXT_VIEW_POST = "com.anomo.bellevue.staging:id/tv_select_group";
-	public static String TITLE_WHERE_TO_POST = "com.anomo.hrlf.staging:id/lbl_title";
-	public static String CANCEL_BUTTON = "com.anomo.hrlf.staging:id/btn_cancel";
-	public static String DONE_BUTTON = "com.anomo.hrlf.staging:id/btn_done";
+	public static String SELECT_OTHER_GROUPS_TEXT_VIEW_POST = "com.anomo.bellevue.staging:id/tv_other_groups";
+	public static String TITLE_WHERE_TO_POST = "com.anomo.bellevue.staging:id/lbl_title";
+	public static String CANCEL_BUTTON = "com.anomo.bellevue.staging:id/btn_cancel";
+	public static String DONE_BUTTON = "com.anomo.bellevue.staging:id/btn_done";
 	public static String GROUP_TYPE_CONTAINER = "com.anomo.bellevue.staging:id/group_container";
-	public static String GROUP_TYPE_LABEL = "com.anomo.hrlf.staging:id/group_type";
-	public static String GROUP_TYPE_CHECK_ICON = "com.anomo.hrlf.staging:id/ic_group_check";
+	public static String GROUP_TYPE_LABEL = "com.anomo.bellevue.staging:id/group_type";
+	public static String GROUP_TYPE_CHECK_ICON = "com.anomo.bellevue.staging:id/ic_group_check";
 	public static String FEED_TYPE_CONTAINER = "com.anomo.bellevue.staging:id/feed_container";
-	public static String FEED_TYPE_LABEL = "com.anomo.hrlf.staging:id/feed_type";
-	public static String FEED_TYPE_CHECK_ICON = "com.anomo.hrlf.staging:id/ic_feed_check";
+	public static String FEED_TYPE_LABEL = "com.anomo.bellevue.staging:id/feed_type";
+	public static String FEED_TYPE_CHECK_ICON = "com.anomo.bellevue.staging:id/ic_feed_check";
 	// Specific group screen
-	public static String SPECIFIC_GROUP_NAME = "com.anomo.hrlf.staging:id/anomo_chk_title";
-	public static String SPECIFIC_GROUP_CHECK_ICON = "com.anomo.hrlf.staging:id/anomo_chk_title";
+	public static String SPECIFIC_GROUP_NAME = "com.anomo.bellevue.staging:id/anomo_chk_title";
+	public static String SPECIFIC_GROUP_CHECK_ICON = "com.anomo.bellevue.staging:id/anomo_chk_title";
 	// Black tips panel
 	public static String HINT_TEXT_TIPS_PANEL = "com.anomo.bellevue.staging:id/hint";
 	public static String CLOSE_ICON_TIPS_PANEL = "com.anomo.bellevue.staging:id/close";

@@ -93,6 +93,10 @@ public class FeedHelper {
 		return ApplicationHelper.getElement(ElementDeclaration.SELECT_GROUP_TEXT_VIEW_POST);
 	}
 	
+	public static MobileElement getSelectOtherGroupsLabel() throws Exception {
+		return ApplicationHelper.getElement(ElementDeclaration.SELECT_OTHER_GROUPS_TEXT_VIEW_POST);
+	}
+	
 	public static MobileElement getGroupTypeLabel() throws Exception {
 		return ApplicationHelper.getElement(ElementDeclaration.GROUP_TYPE_LABEL);
 	}

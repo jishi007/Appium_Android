@@ -99,6 +99,6 @@ public class ActivityCardHelper {
 	
 	public static void tapOnLikeComment() throws Exception {
 		ApplicationHelper.tapButton(getLikeCommentButton());
-		System.out.println("Tap on Like comment" + getLikeCommentButton().getText());
+		System.out.println("Tap on Like comment " + getLikeCommentButton().getText());
 	}
 }

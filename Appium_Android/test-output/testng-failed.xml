@@ -3,18 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="screen.FeedScreen">
+      <class name="screen.WelcomeScreen">
         <methods>
-          <include name="setUpAfterMethod"/>
-          <include name="verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain"/>
-          <include name="verifyBlackTipsPanelIsDisplayedWhenTapOnPostLabelAtTheFirstTime"/>
-          <include name="setUpBeforeTest"/>
+          <include name="tapOnRegisterButtonToOpenRegisterScreen"/>
           <include name="setUpBeforeMethod"/>
-          <include name="postStatusToSpecificGroups"/>
+          <include name="tapOnSignInButtonToOpenSignInScreen"/>
           <include name="setUpAfterTest"/>
-          <include name="verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime"/>
+          <include name="setUpBeforeTest"/>
+          <include name="verifyWelcomeScreenIsDisplayed"/>
+          <include name="setUpAfterMethod"/>
         </methods>
-      </class> <!-- screen.FeedScreen -->
+      </class> <!-- screen.WelcomeScreen -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

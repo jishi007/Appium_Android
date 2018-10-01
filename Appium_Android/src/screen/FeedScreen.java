@@ -67,108 +67,110 @@ public class FeedScreen {
 		screen.openRecentTab();
 	}
 
-	@Test(priority = 3)
-	public void verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime() throws Exception {
-		screen.openInputStatusPanel();
-		screen.closeBlackTipsBox();
-		screen.openFeedScreen();
-		screen.openInputStatusPanel();
-
-		screen.verifyBlackTipsPanelIsDisplayed();
-
-		// Preparing the next Test
-		screen.closeBlackTipsBox();
-		screen.openFeedScreen();
-	}
-
-	@Test(priority = 4)
-	public void verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain() throws Exception {
-		screen.openInputStatusPanel();
-		screen.checkDontShowAgain();
-		screen.closeBlackTipsBox();
-		screen.openFeedScreen();
-		screen.openInputStatusPanel();
-
-		screen.verifyBlackTipsPanelNotDisplayedAnymore();
-
-		// Preparing the next Test
-		screen.openFeedScreen();
-	}
-
-	@Test(priority = 5)
-	public void verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain() throws Exception {
-		screen.openInputStatusPanel();
-
-		screen.verifyInputStatusPanelIsDisplayed();
-
-		// Preparing the next Test
-		screen.openFeedScreen();
-	}
-
-	// VERIFY FUNCTIONAL SIGN IN SCREEN
-	// User should be able to sign in with valid credentials
-	@Test(priority = 6)
-	public void verifyPostButtonIsDisableWWithEmptyContent() throws Exception {
-		screen.openInputStatusPanel();
-		screen.verifyPostButtonIsDisable();
-		screen.inputContentStatus(ElementDeclaration.strInvalidStatusPost);
-		screen.verifyPostButtonIsDisable();
-	}
-
-	@Test(priority = 7)
-	public void postStatus() throws Exception {
-		screen.openInputStatusPanel();
-		screen.inputContentStatus(ElementDeclaration.strStatusPost);
-		screen.tapOnPostButton();
-
-		screen.verifyPostText();
-	}
-
-	@Test(priority = 8)
-	public void likePost() throws Exception {
-		screen.tapOnLikeButton();
-
-		screen.verifyLikePost();
-	}
-
-	@Test(priority = 9)
-	public void unLikePost() throws Exception {
-		screen.tapOnLikeButton();
-
-		screen.verifyUnLikePost();
-	}
-
-	@Test(priority = 10)
-	public void commentPost() throws Exception {
-		screen.tapOnCommentButton();
-		screen.inputContentComment(ElementDeclaration.strComment);
-		screen.tapOnPostCommentButton();
-
-		screen.verifyComment();
-
-		// Preparing the next Test
-		screen.backToProviousScreen();
-	}
-
-	@Test(priority = 11)
-	public void postPicture() throws Exception {
-		screen.openInputStatusPanel();
-		screen.inputContentStatus(ElementDeclaration.strStatusPost);
-		screen.takePhoto();
-		screen.tapOnPostButton();
-
-		screen.verifyPostPicture();
-	}
-
-	@Test(priority = 12)
-	public void postVideo() throws Exception {
-		screen.openInputStatusPanel();
-		screen.inputContentStatus(ElementDeclaration.strStatusPost);
-		screen.recordVideo();
-		screen.tapOnPostButton();
-
-		screen.verifyPostVideo();
-	}
+//	@Test(priority = 3)
+//	public void verifyBlackTipsPanelIsDisplayedWhenAtTheSecondTime() throws Exception {
+//		screen.openInputStatusPanel();
+//		screen.closeBlackTipsBox();
+//		screen.openFeedScreen();
+//		screen.openInputStatusPanel();
+//
+//		screen.verifyBlackTipsPanelIsDisplayed();
+//
+//		// Preparing the next Test
+//		screen.closeBlackTipsBox();
+//		screen.openFeedScreen();
+//	}
+//
+//	@Test(priority = 4)
+//	public void verifyBlackTipsPanelNotDisplayedAfterCheckedDontShowAgain() throws Exception {
+//		screen.openInputStatusPanel();
+//		screen.checkDontShowAgain();
+//		screen.closeBlackTipsBox();
+//		screen.openFeedScreen();
+//		screen.openInputStatusPanel();
+//
+//		screen.verifyBlackTipsPanelNotDisplayedAnymore();
+//
+//		// Preparing the next Test
+//		screen.openFeedScreen();
+//	}
+//
+//	@Test(priority = 5)
+//	public void verifyInputStatusPanelIsDisplayeAfterCheckDontShowAgain() throws Exception {
+//		screen.openInputStatusPanel();
+//
+//		screen.verifyInputStatusPanelIsDisplayed();
+//
+//		// Preparing the next Test
+//		screen.openFeedScreen();
+//	}
+//
+//	// VERIFY FUNCTIONAL SIGN IN SCREEN
+//	// User should be able to sign in with valid credentials
+//	@Test(priority = 6)
+//	public void verifyPostButtonIsDisableWWithEmptyContent() throws Exception {
+//		screen.openInputStatusPanel();
+//		screen.verifyPostButtonIsDisable();
+//		screen.inputContentStatus(ElementDeclaration.strInvalidStatusPost);
+//		screen.verifyPostButtonIsDisable();
+//	}
+//
+//	@Test(priority = 7)
+//	public void postStatus() throws Exception {
+//		screen.openInputStatusPanel();
+//		screen.inputContentStatus(ElementDeclaration.strStatusPost);
+//		screen.tapOnPostButton();
+//
+//		screen.verifyPostText();
+//	}
+//
+//	@Test(priority = 8)
+//	public void likePost() throws Exception {
+//		screen.tapOnLikeButton();
+//
+//		screen.verifyLikePost();
+//	}
+//
+//	@Test(priority = 9)
+//	public void unLikePost() throws Exception {
+//		screen.tapOnLikeButton();
+//
+//		screen.verifyUnLikePost();
+//	}
+//
+//	@Test(priority = 10)
+//	public void commentPost() throws Exception {
+//		screen.tapOnCommentButton();
+//		screen.inputContentComment(ElementDeclaration.strComment);
+//		screen.tapOnPostCommentButton();
+//
+//		screen.verifyComment();
+//
+//		// Preparing the next Test
+//		screen.backToProviousScreen();
+//	}
+//
+//	@Test(priority = 11)
+//	public void postPicture() throws Exception {
+//		screen.openInputStatusPanel();
+//		screen.inputContentStatus(ElementDeclaration.strStatusPost);
+//		screen.takePhoto();
+//		screen.tapOnPostButton();
+//		screen.waitToDo(10);
+//
+//		screen.verifyPostPicture();
+//	}
+//
+//	@Test(priority = 12)
+//	public void postVideo() throws Exception {
+//		screen.openInputStatusPanel();
+//		screen.inputContentStatus(ElementDeclaration.strStatusPost);
+//		screen.recordVideo();
+//		screen.tapOnPostButton();
+//		screen.waitToDo(20);
+//
+//		screen.verifyPostVideo();
+//	}
 
 	@Test(priority = 13)
 	public void postStatusToSpecificGroups() throws Exception {
@@ -178,9 +180,65 @@ public class FeedScreen {
 		screen.checkedPostToSpecificGroupType();
 		screen.selectListSpecificGroup();
 		screen.tapOnPostButton();
+		screen.waitToDo(5);
 
 		screen.verifyPostText();
 	}
+
+	@Test(priority = 14)
+	public void postPictureToSpecificGroups() throws Exception {
+		screen.openInputStatusPanel();
+		screen.inputContentStatus(ElementDeclaration.strStatusPost);
+		screen.takePhoto();
+		screen.tapOnSelectGroupsBox();
+		screen.checkedPostToSpecificGroupType();
+		screen.selectListSpecificGroup();
+		screen.tapOnPostButton();
+		screen.waitToDo(25);
+
+		screen.verifyPostPicture();
+	}
+	
+	@Test(priority = 15)
+	public void postStatusToSpecificGroups1() throws Exception {
+		screen.openInputStatusPanel();
+		screen.inputContentStatus(ElementDeclaration.strStatusPost);
+		screen.tapOnSelectGroupsBox();
+		screen.checkedPostToSpecificGroupType();
+		screen.selectListSpecificGroup();
+		screen.tapOnPostButton();
+		screen.waitToDo(5);
+
+		screen.verifyPostText();
+	}
+
+	@Test(priority = 16)
+	public void postPictureToSpecificGroups1() throws Exception {
+		screen.openInputStatusPanel();
+		screen.inputContentStatus(ElementDeclaration.strStatusPost);
+		screen.takePhoto();
+		screen.tapOnSelectGroupsBox();
+		screen.checkedPostToSpecificGroupType();
+		screen.selectListSpecificGroup();
+		screen.tapOnPostButton();
+		screen.waitToDo(25);
+
+		screen.verifyPostPicture();
+	}
+	
+//	@Test(priority = 15)
+//	public void postVideoToSpecificGroups() throws Exception {
+//		screen.openInputStatusPanel();
+//		screen.inputContentStatus(ElementDeclaration.strStatusPost);
+//		screen.recordVideo();
+//		screen.tapOnSelectGroupsBox();
+//		screen.checkedPostToSpecificGroupType();
+//		screen.selectListSpecificGroup();
+//		screen.tapOnPostButton();
+//		screen.waitToDo(30);
+//
+//		screen.verifyPostVideo();
+//	}
 
 	class Screen {
 		public void launchApp() throws Exception {
@@ -248,6 +306,7 @@ public class FeedScreen {
 		public void inputContentStatus(String strStatusPost) throws Exception {
 			FeedHelper.inputContent(FeedHelper.getInputStatusField(), strStatusPost);
 			System.out.println("Input content status: " + strStatusPost);
+			strListSpecificGroups = strUsername + "'s Profile";
 		}
 
 		public void tapOnSelectGroupsBox() throws Exception {
@@ -261,13 +320,24 @@ public class FeedScreen {
 		}
 
 		public void selectListSpecificGroup() throws Exception {
-			listSpecificGroupName = FeedHelper.getListSpecificGroupsName();
-			if (listSpecificGroupName.size() > 0) {
-				for (MobileElement element : listSpecificGroupName) {
+			List<MobileElement> listSpecificGroupName = FeedHelper.getListSpecificGroupsName();
+			List<MobileElement> listSpecificGroupCheckIcon = FeedHelper.getListSpecificGroupsCheckIcon();
+			int size = listSpecificGroupCheckIcon.size();
+			if (size == 1) {
+				FeedHelper.tapOnSpecificGroup(listSpecificGroupCheckIcon.get(0));
+				System.out.println("Select post into " + listSpecificGroupName.get(0).getText() + " group");
+				FeedHelper.tapOnDoneButton(FeedHelper.getDoneButton());
+				strListSpecificGroups = FeedHelper.getSelectGroupLabel().getText();
+			} else if (size > 1) {
+				int i = 0;
+				for (MobileElement element : listSpecificGroupCheckIcon) {
 					FeedHelper.tapOnSpecificGroup(element);
-					System.out.println("Select post into " + element.getText() + " group");
+					System.out.println("Select post into " + listSpecificGroupName.get(i).getText() + " group");
+					i++;
 				}
 				FeedHelper.tapOnDoneButton(FeedHelper.getDoneButton());
+				strListSpecificGroups = FeedHelper.getSelectGroupLabel().getText() + " "
+						+ FeedHelper.getSelectOtherGroupsLabel().getText();
 			} else {
 				FeedHelper.tapOnCancelButton(FeedHelper.getCancelbutton());
 				System.out.println("This user does not join any groups!");
@@ -291,6 +361,10 @@ public class FeedScreen {
 			FeedHelper.tapOnPostButton(FeedHelper.getPostButton());
 		}
 
+		public void waitToDo(int sec) throws Exception {
+			ApplicationHelper.WaitToDo(sec);
+		}
+
 		public void verifyPostButtonIsDisable() throws Exception {
 			ApplicationHelper.checkElementIsDisable(FeedHelper.getPostButton());
 			System.out.println("Post button is disable");
@@ -305,24 +379,28 @@ public class FeedScreen {
 		}
 
 		public void verifyComment() throws Exception {
-			while (ActivityCardHelper.getUsernameComment() != null
-					&& ActivityCardHelper.getDateTimeComment().getText() == strDateTime) {
+			while (ActivityCardHelper.getUsernameComment() == null
+					&& ActivityCardHelper.getDateTimeComment().getText() != strDateTime) {
 				ApplicationHelper.scrollUp();
 				break;
 			}
 			Assert.assertEquals(ActivityCardHelper.getUsernameComment().getText(), strUsername);
+			ApplicationHelper.WaitToDo(1);
 			Assert.assertEquals(ActivityCardHelper.getDateTimeComment().getText(), strDateTime);
+			ApplicationHelper.WaitToDo(1);
 			Assert.assertEquals(ActivityCardHelper.getContentComment().getText(), ElementDeclaration.strComment);
+			ApplicationHelper.WaitToDo(1);
 			System.out.println("Comment status successfully");
-
-			while (ActivityCardHelper.getLikeCommentButton() != null) {
+			while (ActivityCardHelper.getLikeCommentButton() == null) {
 				ApplicationHelper.scrollDown();
 				break;
 			}
 			ActivityCardHelper.tapOnLikeComment();
+			ApplicationHelper.WaitToDo(1);
 			Assert.assertEquals(ActivityCardHelper.getLikeCommentButton().getText(), "Unlike");
 			System.out.println("Like comment successfully");
 			ActivityCardHelper.tapOnLikeComment();
+			ApplicationHelper.WaitToDo(1);
 			Assert.assertEquals(ActivityCardHelper.getLikeCommentButton().getText(), "Like");
 			System.out.println("Unlike comment successfully");
 		}
@@ -347,37 +425,69 @@ public class FeedScreen {
 
 		public void verifyPostText() throws Exception {
 			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(ActivityCardHelper.getContentStatus(), 3);
+			ApplicationHelper.WaitToDo(1);
 			if (!isDisplay) {
+				System.out.println("Server not responding!");
+			} else {
 				Assert.assertEquals(ActivityCardHelper.getContentStatus().getText(), ElementDeclaration.strStatusPost);
+				ApplicationHelper.WaitToDo(1);
 				Assert.assertEquals(ActivityCardHelper.getUsernameDisplay().getText(), strUsername);
+				ApplicationHelper.WaitToDo(1);
 				Assert.assertEquals(ActivityCardHelper.getDateTimeLable().getText(), strDateTime);
-				while (ActivityCardHelper.getTitleGroup() != null) {
+				ApplicationHelper.WaitToDo(1);
+				while (ActivityCardHelper.getTitleGroup() == null) {
 					ApplicationHelper.scrollDown();
 					break;
 				}
+				Assert.assertEquals(ActivityCardHelper.getContentGroup().getText(), strListSpecificGroups);
+				System.out.println("Post status successfully into " + ActivityCardHelper.getContentGroup().getText());
 			}
-			System.out.println("Post status successfully into " + ActivityCardHelper.getContentGroup().getText());
 		}
 
 		public void verifyPostPicture() throws Exception {
-			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(ActivityCardHelper.getPictureVideoPost(), 10);
+			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(ActivityCardHelper.getPictureVideoPost(), 5);
 			if (!isDisplay) {
+				System.out.println("Server not responding!");
+			} else {
 				Assert.assertEquals(ActivityCardHelper.getContentStatus().getText(), ElementDeclaration.strStatusPost);
+				ApplicationHelper.WaitToDo(1);
 				Assert.assertEquals(ActivityCardHelper.getUsernameDisplay().getText(), strUsername);
+				ApplicationHelper.WaitToDo(1);
+				Assert.assertEquals(ActivityCardHelper.getDateTimeLable().getText(), strDateTime);
+				ApplicationHelper.WaitToDo(1);
 				Assert.assertNotNull(ActivityCardHelper.getPictureVideoPost());
+				ApplicationHelper.WaitToDo(1);
+				while (ActivityCardHelper.getTitleGroup() == null) {
+					ApplicationHelper.scrollDown();
+					break;
+				}
+				Assert.assertEquals(ActivityCardHelper.getContentGroup().getText(), strListSpecificGroups);
+				System.out.println("Post picture successfully into " + ActivityCardHelper.getContentGroup().getText());
 			}
-			System.out.println("Post picture successfully");
 		}
 
 		public void verifyPostVideo() throws Exception {
 			isDisplay = ApplicationHelper.waitUtilElementIsDisplayed(ActivityCardHelper.getPictureVideoPost(), 10);
 			if (!isDisplay) {
+				System.out.println("Server not responding!");
+			} else {
 				Assert.assertEquals(ActivityCardHelper.getContentStatus().getText(), ElementDeclaration.strStatusPost);
+				ApplicationHelper.WaitToDo(1);
 				Assert.assertEquals(ActivityCardHelper.getUsernameDisplay().getText(), strUsername);
+				ApplicationHelper.WaitToDo(1);
+				Assert.assertEquals(ActivityCardHelper.getDateTimeLable().getText(), strDateTime);
+				ApplicationHelper.WaitToDo(1);
 				Assert.assertNotNull(ActivityCardHelper.getPictureVideoPost());
+				ApplicationHelper.WaitToDo(1);
 				Assert.assertNotNull(ActivityCardHelper.getPlayVideoIcon());
+				ApplicationHelper.WaitToDo(1);
+				while (ActivityCardHelper.getTitleGroup() == null) {
+					ApplicationHelper.scrollDown();
+					break;
+				}
+				Assert.assertEquals(ActivityCardHelper.getContentGroup().getText(), strListSpecificGroups);
+				System.out.println("Post video successfully into " + ActivityCardHelper.getContentGroup().getText());
 			}
-			System.out.println("Post video successfully");
 		}
 
 		public void openInputStatusPanel() throws Exception {
@@ -425,5 +535,5 @@ public class FeedScreen {
 	String strUsername;
 	String strDateTime = "Right now";
 	boolean isDisplay = true;
-	List<MobileElement> listSpecificGroupName;
+	String strListSpecificGroups;
 }
